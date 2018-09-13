@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 import { requireNativeComponent } from 'react-native'
 
+import Base from './../../Base/Base';
+
 const NativeUserPortraitScreenlet = requireNativeComponent('UserPortraitScreenlet');
 
 export default class UserPortraitScreenlet extends Component {
@@ -19,20 +21,8 @@ export default class UserPortraitScreenlet extends Component {
             <NativeUserPortraitScreenlet 
                 {... this.props}
                 screenletAttributes={this.state}
-                onUserPortraitLoaded={this._onUserPortraitLoaded.bind(this)}
-                onUserPortraitError={this._onUserPortraitError.bind(this)}
-                onUserPortraitUploaded={this._onUserPortraitUploaded.bind(this)}
-                onUserPortraitUploadError={this._onUserPortraitUploadError.bind(this)}
             />
         );
-    }
-
-    // Events
-    _onUserPortraitLoaded(event) {
-        if(!this.props.onUserPortraitLoaded) {
-            return;
-        }
-        this.props.onUserPortraitLoaded(event.nativeEvent.image)
     }
 
     _onUserPortraitError(event) {

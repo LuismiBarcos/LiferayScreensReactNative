@@ -17,8 +17,29 @@ export default class UserPortrait extends Component {
         <UserPortraitScreenlet 
             style={styles.portrait}
             userId={this.state.userId}
+            // Events
+            onUserPortraitLoaded={this._onUserPortraitLoaded}
+            onUserPortraitError = {this._onUserPortraitError}
+            onUserPortraitUploaded = {this._onUserPortraitUploaded}
+            onUserPortraitUploadError={this._onUserPortraitUploadError}
         />
     );
+  }
+
+  _onUserPortraitLoaded(image){
+    console.log('USUARIO --> _onUserPortraitLoaded ', image);
+  }
+
+  _onUserPortraitError(error){
+    console.log('USUARIO --> _onUserPortraitError ', error);
+  }
+
+  _onUserPortraitUploaded(attributes){
+    console.log('USUARIO --> _onUserPortraitUploaded ', attributes);
+  }
+
+  _onUserPortraitUploadError(error){
+    console.log('USUARIO --> _onUserPortraitUploadError ', error);
   }
 }
 
