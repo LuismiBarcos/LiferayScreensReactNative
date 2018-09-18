@@ -1,5 +1,6 @@
 # LiferayScreensReactNative
-INSTRUCTIONS FOR USE
+
+## INSTRUCTIONS FOR USE
 
 If you want to run the demo app of this repository you have to do the following steps:
 
