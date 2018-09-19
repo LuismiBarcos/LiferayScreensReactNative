@@ -143,3 +143,13 @@ export interface AssetListScreenletProps {
     onError: (event: any) => void;
 }
 export class AssetListScreenlet extends BaseScreenlet<AssetListScreenletProps> {}
+
+export interface WebContentDisplayScreenletProps {
+    groupId: number;
+    articleId: string;
+    templateId: number;
+    structureId: number;
+    autoLoad: boolean;
+}
+export class WebContentDisplayScreenlet extends BaseScreenlet<WebContentDisplayScreenletProps>{}
+

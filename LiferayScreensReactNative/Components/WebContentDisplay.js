@@ -10,8 +10,20 @@ export default class WebContent extends Component {
             <WebContentDisplayScreenlet 
                 style={styles.webdisplay}
                 articleId={"57343"}
+                // iOS Events
+                onWebContentResponse={this._onWebContentResponse}
+                // Android Events
+                onWebContentReceived={this._onWebContentReceived}                
             />
         );
+    }
+
+    _onWebContentResponse(html) {
+        console.log('USUARIO --> _onWebContentResponse ', html);
+    }
+
+    _onWebContentReceived(html) {
+        console.log('USUARIO --> _onWebContentReceived ', html);
     }
 }
 var {width, height} = Dimensions.get('window');
