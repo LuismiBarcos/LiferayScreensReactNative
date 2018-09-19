@@ -122,5 +122,24 @@ export interface DDLListScreenletProps {
     onListItemSelected: (event: any) => void;
     onError: (event: any) => void;
 }
-
 export class DDLListScreenlet extends BaseScreenlet<DDLListScreenletProps> {}
+
+export interface AssetListScreenletProps {
+    groupId: number;
+    classNameId: number;
+    portletItemName: string;
+    autoLoad: boolean;
+    refreshControl: boolean;
+    firstPageSize: number;
+    pageSize: number;
+    // iOS Events
+    onAssetListResponse: (event: any) => void;
+    onAssetListError: (event: any) => void;
+    onAssetSelected: (event: any) => void;
+    // Android Events
+    onListPageFailed: (event: any) => void;
+    onListPageReceived: (event: any) => void;
+    onListItemSelected: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class AssetListScreenlet extends BaseScreenlet<AssetListScreenletProps> {}

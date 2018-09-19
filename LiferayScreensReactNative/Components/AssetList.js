@@ -11,8 +11,30 @@ export default class AssetList extends Component {
                 {...this.props}
                 style={styles.assets}
                 classNameId={20015}
+                // iOS Event
+                onAssetListResponse={this._onAssetListResponse}
+                onAssetListError={this._onAssetListError}
+                // Android Event
+                onListPageReceived={this._onListPageReceived}
+                onListPageFailed={this._onListPageFailed}
             />
         );
+    }
+
+    _onAssetListResponse(assets) {
+        console.log('USUARIO --> _onAssetListResponse ', assets);
+    }
+
+    _onAssetListError(error) {
+        console.log('USUARIO --> _onAssetListError ', error);
+    }
+
+    _onListPageReceived(list) {
+        console.log('USUARIO --> _onListPageReceived ', list);
+    }
+    
+    _onListPageFailed(error) {
+        console.log('USUARIO --> _onListPageFailed ', error);
     }
 }
 

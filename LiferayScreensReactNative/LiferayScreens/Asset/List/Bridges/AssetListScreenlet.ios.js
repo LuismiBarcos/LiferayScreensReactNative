@@ -7,7 +7,7 @@ const NativeAssetListScreenlet = requireNativeComponent('AssetListScreenlet');
 export default class AssetListScreenlet extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.screenletAttributes = {
             groupId: props.groupId || 0,
             classNameId: props.classNameId || 0,
             portletItemName: props.portletItemName || "",
@@ -21,33 +21,8 @@ export default class AssetListScreenlet extends Component {
         return(
             <NativeAssetListScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
-                onAssetListResponse={this._onAssetListResponse.bind(this)}
-                onAssetListError={this._onAssetListError.bind(this)}
-                onAssetSelected={this._onAssetSelected.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onAssetListResponse(event) {
-        if(!this.props.onAssetListResponse) {
-            return;
-        }
-        this.props.onAssetListResponse(event.nativeEvent.assets);
-    }
-
-    _onAssetListError(event) {
-        if(!this.props.onAssetListError) {
-            return;
-        }
-        this.props.onAssetListError(event.nativeEvent.error);
-    }
-
-    _onAssetSelected(event) {
-        if(!this.props.onAssetSelected) {
-            return;
-        }
-        this.props.onAssetSelected(event.nativeEvent.asset);
     }
 }

@@ -8,7 +8,7 @@ const NativeAssetListScreenlet = requireNativeComponent('AssetListScreenlet');
 export default class AssetListScreenlet extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.screenletAttributes = {
             autoLoad: props.autoLoad || true,
             groupId: props.groupId || 0,
             portletItemName: props.portletItemName || "",
@@ -16,18 +16,14 @@ export default class AssetListScreenlet extends Component {
             firstPageSize: props.firstPageSize || 50,
             pageSize: props.pageSize || 25
         }
-        this._onListPageFailed = this._onListPageFailed.bind(this);
-        this._onListPageReceived = this._onListPageReceived.bind(this);
-        this._onListItemSelected = this._onListItemSelected.bind(this);
-        this._onError = this._onError.bind(this);
     }
 
     componentWillMount() {
         // Events
-        DeviceEventEmitter.addListener('onAssetListScreenletListPageFailed', this._onListPageFailed);
-        DeviceEventEmitter.addListener('onAssetListScreenletListPageReceived', this._onListPageReceived);
-        DeviceEventEmitter.addListener('onAssetListScreenletListItemSelected', this._onListItemSelected);
-        DeviceEventEmitter.addListener('onAssetListScreenletError', this._onError);
+        DeviceEventEmitter.addListener('onAssetListScreenletListPageFailed', this.props.onListPageFailed);
+        DeviceEventEmitter.addListener('onAssetListScreenletListPageReceived', this.props.onListPageReceived);
+        DeviceEventEmitter.addListener('onAssetListScreenletListItemSelected', this.props.onListItemSelected);
+        DeviceEventEmitter.addListener('onAssetListScreenletError', this.props.onError);
     }
 
     componentWillUnmount(){
@@ -38,37 +34,8 @@ export default class AssetListScreenlet extends Component {
         return(
             <NativeAssetListScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onListPageFailed(event) {
-        if(!this.props.onListPageFailed) {
-            return;
-        }
-        this.props.onListPageFailed(event.pageNumber, event.error);
-    }
-
-    _onListPageReceived(event) {
-        if(!this.props.onListPageReceived) {
-            return;
-        }
-        this.props.onListPageReceived(event.list);
-    }
-
-    _onListItemSelected(event) {
-        if(!this.props.onListItemSelected) {
-            return;
-        }
-        this.props.onListItemSelected(event.itemSelected);
-    }
-
-    _onError(event) {
-        if(!this.props.onError) {
-            return;
-        }
-        this.props.onError(event.error);
     }
 }
