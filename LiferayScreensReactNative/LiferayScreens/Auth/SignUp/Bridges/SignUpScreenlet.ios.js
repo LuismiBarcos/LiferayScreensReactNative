@@ -12,7 +12,7 @@ export default class SignUpScreenlet extends Component {
     constructor(props) {
         super(props);
         
-        this.state = {
+        this.screenletAttributes = {
             anonymousApiUserName: props.anonymousApiUserName || "",
             anonymousApiPassword: props.anonymousApiPassword || "",
             companyId: props.companyId || 0,
@@ -24,25 +24,8 @@ export default class SignUpScreenlet extends Component {
         return(
             <NativeUserPortraitScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
-                onSignUpResponseUserAttributes={this._onSignUpResponseUserAttributes.bind(this)}
-                onSignUpError={this._onSignUpError.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events 
-    _onSignUpResponseUserAttributes(event) {
-        if(!this.props.onSignUpSuccess) {
-            return;
-        }
-        this.props.onSignUpSuccess(event.nativeEvent.user)
-    }
-
-    _onSignUpError(event) {
-        if(!this.props.onSignUpFailure) {
-            return;
-        }
-        this.props.onSignUpFailure(event.nativeEvent.error);
     }
 }

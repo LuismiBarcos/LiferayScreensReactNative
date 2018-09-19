@@ -9,23 +9,20 @@ export default class SignUpScreenlet extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
+        this.screenletAttributes = {
             anonymousApiUserName: props.anonymousApiUserName || "",
             anonymousApiPassword: props.anonymousApiPassword || "",
             companyId: props.companyId || 0,
             autoLogin: props.autoLoad || true
         }
-
-        this._onSignUpSuccess = this._onSignUpSuccess.bind(this);
-        this._onSignUpFailure = this._onSignUpFailure.bind(this);
     }
     componentWillMount() {
         // Events
-        DeviceEventEmitter.addListener('onSignUpScreenletSuccess', this._onSignUpSuccess);
-        DeviceEventEmitter.addListener('onSignUpScreenletFailure', this._onSignUpFailure);
+        DeviceEventEmitter.addListener('onSignUpScreenletSuccess', this.props.onSignUpSuccess);
+        DeviceEventEmitter.addListener('onSignUpScreenletFailure', this.props._onSignUpFailure);
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         DeviceEventEmitter.removeAllListeners();
     }
     
@@ -33,23 +30,8 @@ export default class SignUpScreenlet extends Component {
         return(
             <NativeSignUpScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onSignUpSuccess(event) {
-        if(!this.props.onSignUpSuccess) {
-            return;
-        }
-        this.props.onSignUpSuccess(JSON.parse(event.user));
-    }
-
-    _onSignUpFailure(event) {
-        if(!this.props.onSignUpFailure) {
-            return;
-        }
-        this.props.onSignUpFailure(event.error);
     }
 }

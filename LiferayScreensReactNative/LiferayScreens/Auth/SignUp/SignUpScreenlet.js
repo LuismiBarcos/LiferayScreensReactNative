@@ -6,33 +6,17 @@ import {
     requireNativeComponent,
 } from 'react-native'
 
+import BaseScreenlet from './../../Base/BaseScreenlet';
 import NativeSignUpScreenlet from './Bridges/SignUpScreenlet';
 
-export default class SignUpScreenlet extends Component {
+export default class SignUpScreenlet extends BaseScreenlet {
     render(){
         return(
             <NativeSignUpScreenlet 
                 {...this.props}
-                onSignUpSuccess={this._onSignUpSuccess.bind(this)}
-                onSignUpFailure={this._onSignUpFailure.bind(this)}
+                onSignUpSuccess={this.handleListener('onSignUpSuccess', 'user')}
+                onSignUpFailure={this.handleListener('onSignUpFailure', 'error')}
             />
         );
-    }
-
-    // Common events
-    _onSignUpSuccess(user) {
-        console.log('Sign up! -> new user', user);
-        if(!this.props.onSignUpSuccess) {
-            return;
-        }
-        this.props.onSignUpSuccess(user);
-    }
-
-    _onSignUpFailure(error) {
-        console.log('Sign up error! -> ', error);
-        if(!this.props.onSignUpFailure) {
-            return;
-        }
-        this.props.onSignUpFailure(error);
     }
 }

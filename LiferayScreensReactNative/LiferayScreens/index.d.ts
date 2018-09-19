@@ -3,8 +3,9 @@
 // Definitions by: [Luis Miguel Barcos] <[https://github.com/LuismiBarcos]>
 
 import React from 'react';
+import BaseScreenlet from './Base/BaseScreenlet';
 
-export class Base<T> extends React.Component<T>{}
+export class BaseScreenlet<T> extends React.Component<T>{}
 
 export interface UserPortraitScreenletProps {
     //Attributes
@@ -24,7 +25,7 @@ export interface UserPortraitScreenletProps {
     // Android events
     onUserPortraitLoadReceived: (event: any) => void;
 }
-export class UserPortraitScreenlet extends Base<UserPortraitScreenletProps>{}
+export class UserPortraitScreenlet extends BaseScreenlet<UserPortraitScreenletProps>{}
 
 export interface LoginScreenletProps {
     // Attributes
@@ -39,4 +40,17 @@ export interface LoginScreenletProps {
     // Android events
     onLoginScreenletAuthenticationBrowserShown: (event: any) => void;
 }
-export class LoginScreenlet extends Base<LoginScreenletProps>{}
+export class LoginScreenlet extends BaseScreenlet<LoginScreenletProps>{}
+
+export interface SignUpScreenletProps {
+    // Attributes
+    anonymousApiUserName: string;
+    anonymousApiPassword: string;
+    companyId: number;
+    autoLogin: boolean;
+    saveCredentials: boolean;
+    // Common Events
+    onSignUpSuccess: (event: any) => void;
+    onSignUpFailure: (event: any) => void;
+}
+export class SignUpScreenlet extends BaseScreenlet<SignUpScreenletProps>{}

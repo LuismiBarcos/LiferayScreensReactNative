@@ -16,8 +16,18 @@ export default class SignUp extends Component {
                 style={styles.signup}
                 anonymousApiUserName={"test@liferay.com"}
                 anonymousApiPassword={"test11"}
+                onSignUpSuccess={this._onSignUpSuccess.bind(this)}
+                onSignUpFailure={this._onSignUpFailure.bind(this)}
             />
         );
+    }
+
+    _onSignUpSuccess(user) {
+        console.log('USUARIO --> _onSignUpSuccess ', user);
+    }
+
+    _onSignUpFailure(error) {
+        console.log('USUARIO --> _onSignUpSuccess ', error);
     }
 }
 
