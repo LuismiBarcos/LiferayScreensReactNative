@@ -8,18 +8,16 @@ const NativeForgotPasswordScreenlet = requireNativeComponent('ForgotPasswordScre
 export default class ForgotPasswordScreenlet extends Component {
     constructor(props){
         super(props);
-        this.state = {
+        this.screenletAttributes = {
             anonymousApiUserName: props.anonymousApiUserName || "",
             anonymousApiPassword: props.anonymousApiPassword || "",
             companyId: props.companyId || 0
         };
-        this._onForgotPasswordRequestSuccess = this._onForgotPasswordRequestSuccess.bind(this);
-        this._onForgotPasswordRequestFailure = this._onForgotPasswordRequestFailure.bind(this);
     }
     componentWillMount(){
         //Events
-        DeviceEventEmitter.addListener('onForgotPasswordScreenletRequestSuccess', this._onForgotPasswordRequestSuccess);
-        DeviceEventEmitter.addListener('onForgotPasswordScreenletRequestFailure', this._onForgotPasswordRequestFailure);
+        DeviceEventEmitter.addListener('onForgotPasswordScreenletRequestSuccess', this.props.onForgotPasswordRequestSuccess);
+        DeviceEventEmitter.addListener('onForgotPasswordScreenletRequestFailure', this.props.onForgotPasswordRequestFailure);
     }
 
     componentWillUnmount(){
@@ -30,24 +28,8 @@ export default class ForgotPasswordScreenlet extends Component {
         return(
             <NativeForgotPasswordScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-
-    _onForgotPasswordRequestSuccess(event) {
-        if(!this.props.onForgotPasswordRequestSuccess) {
-            return;
-        }
-        this.props.onForgotPasswordRequestSuccess(event.passwordSent);
-    }
-
-    _onForgotPasswordRequestFailure(event) {
-        if(!this.props.onForgotPasswordRequestFailure) {
-            return;
-        }
-        this.props.onForgotPasswordRequestFailure(event.error);
     }
 }

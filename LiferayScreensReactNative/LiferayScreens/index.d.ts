@@ -54,3 +54,18 @@ export interface SignUpScreenletProps {
     onSignUpFailure: (event: any) => void;
 }
 export class SignUpScreenlet extends BaseScreenlet<SignUpScreenletProps>{}
+
+export interface ForgotPasswordScreenletProps {
+    // Attributes
+    anonymousApiUserName: string;
+    anonymousApiPassword: string;
+    companyId: number;
+    // iOS Events
+    onForgotPasswordSent: (event: any) => void;
+    onForgotPasswordError: (event: any) => void;
+    // Android events
+    onForgotPasswordRequestSuccess: (event: any) => void;
+    onForgotPasswordRequestFailure: (event: any) => void;
+}
+export class ForgotPasswordScreenlet extends BaseScreenlet<ForgotPasswordScreenletProps> {}
+
