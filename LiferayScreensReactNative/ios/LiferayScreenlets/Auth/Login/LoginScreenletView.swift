@@ -21,6 +21,16 @@ class LoginScreenletView: RCTView, LoginScreenletDelegate {
       screenlet.saveCredentials = saveCredentials
     }
   }
+  private var theme: String = "default"
+  var Theme: String {
+    get {
+      return theme
+    }
+    set {
+      theme = newValue
+      screenlet.themeName = theme
+    }
+  }
   
   // Events
   var onLoginSuccess: RCTBubblingEventBlock?

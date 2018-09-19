@@ -5,20 +5,12 @@ import { DeviceEventEmitter } from 'react-native';
 
 const NativeLoginScreenlet = requireNativeComponent('LoginScreenlet');
 
-export default class LoginScreenlet extends Component {
-    constructor(props){
-        super(props);
-
-        this._onLoginSuccess = this._onLoginSuccess.bind(this);
-        this._onLoginError = this._onLoginError.bind(this);
-        this._onAuthenticationBrowserShown = this._onAuthenticationBrowserShown.bind(this);
-    }
-    
+export default class LoginScreenlet extends Component {    
     componentWillMount() {
         // Events
-        DeviceEventEmitter.addListener('onLoginScreenletSuccess', this._onLoginSuccess);
-        DeviceEventEmitter.addListener('onLoginScreenletError', this._onLoginError);
-        DeviceEventEmitter.addListener('onLoginScreenletAuthenticationBrowserShown', this._onAuthenticationBrowserShown);
+        DeviceEventEmitter.addListener('onLoginScreenletSuccess', this.props.onLoginSuccess);
+        DeviceEventEmitter.addListener('onLoginScreenletError', this.props.onLoginError);
+        DeviceEventEmitter.addListener('onLoginScreenletAuthenticationBrowserShown', this.props.onAuthenticationBrowserShown);
     }
 
     componentWillUnmount(){
@@ -31,26 +23,5 @@ export default class LoginScreenlet extends Component {
                 {...this.props}
             />
         );
-    }
-
-    _onLoginSuccess(event) {
-        if(!this.props.onLoginSuccess) {
-            return;
-        }
-        this.props.onLoginSuccess(JSON.parse(event.user));
-    }
-
-    _onLoginError(event) {
-        if(!this.props.onLoginError) {
-            return;
-        }
-        this.props.onLoginError(event.error);
-    }
-
-    _onAuthenticationBrowserShown() {
-        if(!this.props.onAuthenticationBrowserShown) {
-            return;
-        }
-        this.props.onAuthenticationBrowserShown();
     }
 }

@@ -21,5 +21,6 @@ RCT_EXPORT_VIEW_PROPERTY(onCredentialsLoadedUserAttributes, RCTBubblingEventBloc
 
 // Attributes
 RCT_EXPORT_VIEW_PROPERTY(saveCredentials, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(theme, NSString)
 
 @end
