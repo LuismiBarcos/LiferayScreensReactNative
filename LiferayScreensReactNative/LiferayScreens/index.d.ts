@@ -69,3 +69,36 @@ export interface ForgotPasswordScreenletProps {
 }
 export class ForgotPasswordScreenlet extends BaseScreenlet<ForgotPasswordScreenletProps> {}
 
+export interface DDLFormScreenletProps {
+    // Attributes
+    structureId: number;
+    groupId: number;
+    recordSetId: number;
+    recordId: number;
+    repositoryId: number;
+    folderId: number;
+    autoLoad: boolean;
+    autoscrollOnValidation: boolean;
+    showSubmitButton: boolean;
+    editable: boolean;
+    // iOS Events
+    onFormLoaded: (event: any) => void;
+    onFormLoadError: (event: any) => void;
+    onRecordLoaded: (event: any) => void;
+    onRecordLoadError: (event: any) => void;
+    onFormSubmitted: (event: any) => void;
+    onFormSubmitError: (event: any) => void;
+    onDocumentFieldUploadStarted: (event: any) => void;
+    onUploadProgress: (event: any) => void;
+    onUploadFinished: (event: any) => void;
+    onUploadError: (event: any) => void;
+    // Android events
+    onDDLFormLoaded: (event: any) => void;
+    onDDLFormRecordLoaded: (event: any) => void;
+    onDDLFormRecordAdded: (event: any) => void;
+    onDDLFormRecordUpdated: (event: any) => void;
+    onDDLFormDocumentUploaded: (event: any) => void;
+    onDDLFormDocumentUploadFailed: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class DDLFormScreenlet extends BaseScreenlet<DDLFormScreenletProps> {}

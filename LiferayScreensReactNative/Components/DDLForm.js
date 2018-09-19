@@ -11,8 +11,20 @@ export default class  DDLForm extends Component {
                 style={styles.ddl}
                 structureId={54371}
                 recordSetId={54375}
+                // iOS event
+                onFormLoaded={this._onFormLoaded}
+                // Android event
+                onDDLFormLoaded={this._onDDLFormLoaded}
             />
         );
+    }
+
+    _onFormLoaded(record) {
+        console.log('USUARIO -> _onFormLoaded', record);
+    }
+
+    _onDDLFormLoaded(record) {
+        console.log('USUARIO -> _onDDLFormLoaded', record);
     }
 }
 
