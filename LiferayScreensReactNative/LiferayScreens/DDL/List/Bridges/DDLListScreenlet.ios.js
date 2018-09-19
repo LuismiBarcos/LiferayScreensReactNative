@@ -8,7 +8,7 @@ export default class DDLListScreenlet extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
+        this.screenletAttributes = {
             recordSetId: props.recordSetId || 0,
             userId: props.userId || 0,
             labelFields: props.labelFields || "",
@@ -22,33 +22,8 @@ export default class DDLListScreenlet extends Component {
         return(
             <NativeDDLListScreenlet
                 {...this.props}
-                screenletAttributes={this.state}
-                onDDLListResponseRecords={this._onDDLListResponseRecords.bind(this)}
-                onDDLListError={this._onDDLListError.bind(this)}
-                onDDLSelectedRecord={this._onDDLSelectedRecord.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onDDLListResponseRecords(event) {
-        if(!this.props.onDDLListResponseRecords) {
-            return;
-        }
-        this.props.onDDLListResponseRecords(event.nativeEvent.records);
-    }
-
-    _onDDLListError(event) {
-        if(!this.props.onDDLListError) {
-            return;
-        }
-        this.props.onDDLListError(event.nativeEvent.error);
-    }
-
-    _onDDLSelectedRecord(event) {
-        if(!this.props.onDDLSelectedRecord) {
-            return;
-        }
-        this.props.onDDLSelectedRecord(event.nativeEvent.record);
     }
 }

@@ -102,3 +102,25 @@ export interface DDLFormScreenletProps {
     onError: (event: any) => void;
 }
 export class DDLFormScreenlet extends BaseScreenlet<DDLFormScreenletProps> {}
+
+export interface DDLListScreenletProps {
+    // Attributes
+    autoLoad: boolean;
+    recordSetId: number;
+    userId: number;
+    firstPageSize: number;
+    pageSize: number;
+    labelFields: string;
+    refreshControl: boolean;
+    // iOS Events
+    onDDLListResponseRecords: (event: any) => void;
+    onDDLListError: (event: any) => void;
+    onDDLSelectedRecord: (event: any) => void;
+    // Android Events
+    onListPageFailed: (event: any) => void;
+    onListPageReceived: (event: any) => void;
+    onListItemSelected: (event: any) => void;
+    onError: (event: any) => void;
+}
+
+export class DDLListScreenlet extends BaseScreenlet<DDLListScreenletProps> {}

@@ -12,8 +12,20 @@ export default class DDLList extends Component {
                 style={styles.ddl}
                 recordSetId={33280}
                 labelFields={"description"}
+                // iOS events
+                onDDLListResponseRecords={this._onDDLListResponseRecords.bind(this)}
+                // Android events
+                onListPageReceived={this._onListPageReceived.bind(this)}
             />
         );
+    }
+
+    _onDDLListResponseRecords(records) {
+        console.log('USUARIO -> _onDDLListResponseRecords ', records);
+    }
+
+    _onListPageReceived(list) {
+        console.log('USUARIO -> _onListPageReceived ', list);
     }
 }
 
