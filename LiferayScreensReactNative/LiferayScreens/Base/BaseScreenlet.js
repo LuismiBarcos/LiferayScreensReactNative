@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import { requireNativeComponent, Platform } from 'react-native'
 
-export default class Base extends Component {
+export default class BaseScreenlet extends Component {
     constructor(props) {
         super (props);
     }

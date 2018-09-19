@@ -2,13 +2,14 @@
 import React, {Component} from 'react';
 import { requireNativeComponent} from 'react-native';
 import { DeviceEventEmitter } from 'react-native';
+import BaseScreenlet from '../../Base/BaseScreenlet';
 
 const NativeUserPortraitScreenlet = requireNativeComponent('UserPortraitScreenlet');
 
-export default class UserPortraitScreenlet extends Component {
+export default class UserPortraitScreenlet extends BaseScreenlet {
     constructor(props){
         super(props);
-        this.state = {
+        this.screenletAttributes = {
             autoLoad: props.autoLoad || true,
             userId: props.userId || 0,
             male: props.male || true,
@@ -16,17 +17,13 @@ export default class UserPortraitScreenlet extends Component {
             uuid: props.uuid || "",
             editable: props.editable || false
         }
-
-        this._onUserPortraitLoadReceived = this._onUserPortraitLoadReceived.bind(this);
-        this._onUserPortraitUploaded = this._onUserPortraitUploaded.bind(this);
-        this._onUserPortraitError = this._onUserPortraitError.bind(this);
     }
     
     componentWillMount() {
         // Events
-        DeviceEventEmitter.addListener('onUserPortraitScreenletLoadReceived', this._onUserPortraitLoadReceived);
-        DeviceEventEmitter.addListener('onUserPortraitScreenletUploaded', this._onUserPortraitUploaded);
-        DeviceEventEmitter.addListener('onUserPortraitScreenletError', this._onUserPortraitError);
+        DeviceEventEmitter.addListener('onUserPortraitScreenletLoadReceived', this.props.onUserPortraitLoadReceived);
+        DeviceEventEmitter.addListener('onUserPortraitScreenletUploaded', this.props.onUserPortraitUploaded);
+        DeviceEventEmitter.addListener('onUserPortraitScreenletError', this.props.onUserPortraitError);
     }
 
     componentWillUnmount(){
@@ -37,29 +34,8 @@ export default class UserPortraitScreenlet extends Component {
         return(
             <NativeUserPortraitScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    _onUserPortraitLoadReceived(event) {
-        if(!this.props.onUserPortraitLoadReceived) {
-            return;
-        }
-        this.props.onUserPortraitLoadReceived(event.image);
-    }
-
-    _onUserPortraitUploaded(event) {
-        if(!this.props.onUserPortraitUploaded) {
-            return;
-        }
-        this.props.onUserPortraitUploaded(event.onUserPortraitUploaded);
-    }
-
-    _onUserPortraitError(event) {
-        if(!this.props.onUserPortraitError) {
-            return;
-        }
-        this.props.onUserPortraitError(event.error);
     }
 }

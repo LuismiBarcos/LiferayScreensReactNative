@@ -22,6 +22,7 @@ export default class UserPortrait extends Component {
             onUserPortraitError = {this._onUserPortraitError}
             onUserPortraitUploaded = {this._onUserPortraitUploaded}
             onUserPortraitUploadError={this._onUserPortraitUploadError}
+            onUserPortraitLoadReceived={this._onUserPortraitLoadReceived}
         />
     );
   }
@@ -40,6 +41,10 @@ export default class UserPortrait extends Component {
 
   _onUserPortraitUploadError(error){
     console.log('USUARIO --> _onUserPortraitUploadError ', error);
+  }
+
+  _onUserPortraitLoadReceived(image) {
+    console.log('USUARIO --> _onUserPortraitLoadReceived ', image);
   }
 }
 

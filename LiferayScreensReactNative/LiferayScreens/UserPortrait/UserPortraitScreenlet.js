@@ -6,10 +6,10 @@ import {
     requireNativeComponent,
 } from 'react-native'
 
-import Base from './../Base/Base';
 import NativeUserPortraitScreenlet from './Bridges/UserPortraitScreenlet'
+import BaseScreenlet from '../Base/BaseScreenlet';
 
-export default class UserPortraitScreenlet extends Base {
+export default class UserPortraitScreenlet extends BaseScreenlet {
     render() {
         return (
             <NativeUserPortraitScreenlet 
@@ -21,51 +21,8 @@ export default class UserPortraitScreenlet extends Base {
                 // iOS events
                 onUserPortraitUploadError={this.handleListener('onUserPortraitUploadError', 'error')}
                 // Android events
-                onUserPortraitLoadReceived = {this._onUserPortraitLoadReceived.bind(this)}
+                onUserPortraitLoadReceived = {this.handleListener('onUserPortraitLoadReceived', 'image')}
             />
         );
-    }
-
-    // Common events
-    // _onUserPortraitLoaded(image) {
-    //     console.log('_onUserPortraitLoaded -> ', image);
-    //     if(!this.props.onUserPortraitLoaded) {
-    //         return;
-    //     }
-    //     this.props.onUserPortraitLoaded(image)
-    // }
-
-    // _onUserPortraitError(error) {
-    //     console.log('_onUserPortraitError -> ', error);
-    //     if(!this.props.onUserPortraitError){
-    //         return;
-    //     }
-    //     this.props.onUserPortraitError(error)
-    // }
-
-    // _onUserPortraitUploaded(attributes) {
-    //     console.log('_onUserPortraitUploaded -> ', attributes);
-    //     if(!this.props.onUserPortraitUploaded){
-    //         return;
-    //     }
-    //     this.props.onUserPortraitUploaded(attributes)
-    // }
-
-    // // iOS events
-    // _onUserPortraitUploadError(error) {
-    //     console.log('_onUserPortraitUploadError -> ', error);
-    //     if(!this.props.onUserPortraitUploadError){
-    //         return;
-    //     }
-    //     this.props.onUserPortraitUploadError(error)
-    // }
-
-    // Android events
-    _onUserPortraitLoadReceived(imageLoaded) {
-        console.log('_onUserPortraitLoadReceived -> ', imageLoaded);
-        if(!this.props.onUserPortraitLoadReceived) {
-            return;
-        }
-        this.props.onUserPortraitLoadReceived(imageLoaded);
     }
 }
