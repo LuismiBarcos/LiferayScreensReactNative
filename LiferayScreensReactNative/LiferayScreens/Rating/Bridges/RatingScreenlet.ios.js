@@ -8,7 +8,7 @@ export default class RatingScreenlet extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
+        this.screenletAttributes = {
             autoLoad: props.autoLoad || true,
             editable: props.editable || true,
             entryId: props.entryId || 0,
@@ -21,41 +21,8 @@ export default class RatingScreenlet extends Component {
         return(
             <NativeRatingScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
-                onRatingRetrieve={this._onRatingRetrieve.bind(this)}
-                onRatingDeleted={this._onRatingDeleted.bind(this)}
-                onRatingUpdated={this._onRatingUpdated.bind(this)}
-                onRatingError={this._onRatingError.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onRatingRetrieve(event) {
-        if(!this.props.onRatingRetrieve) {
-            return;
-        }
-        this.props.onRatingRetrieve(event.nativeEvent.rating)
-    }
-
-    _onRatingDeleted(event) {
-        if(!this.props.onRatingDeleted) {
-            return;
-        }
-        this.props.onRatingDeleted(event.nativeEvent.rating)
-    }
-
-    _onRatingUpdated(event) {
-        if(!this.props.onRatingUpdated) {
-            return;
-        }
-        this.props.onRatingUpdated(event.nativeEvent.rating)
-    }
-
-    _onRatingError(event) {
-        if(!this.props.onRatingError) {
-            return;
-        }
-        this.props.onRatingError(event.nativeEvent.error)
     }
 }

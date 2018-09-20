@@ -7,65 +7,22 @@ import {
 } from 'react-native'
 
 import NativeRatingScreenlet from './Bridges/RatingScreenlet'
+import BaseScreenlet from '../Base/BaseScreenlet';
 
-export default class RatingScreenlet extends Component {
+export default class RatingScreenlet extends BaseScreenlet {
     render(){
         return(
             <NativeRatingScreenlet 
                 {...this.props}
-                onRatingOperationSuccess={this._onRatingOperationSuccess.bind(this)}
-                onError={this._onError.bind(this)}
+                // iOS events
+                onRatingRetrieve={this.handleListener('onRatingRetrieve', 'rating')}
+                onRatingDeleted={this.handleListener('onRatingRetrieve', 'rating')}
+                onRatingUpdated={this.handleListener('onRatingRetrieve', 'rating')}
+                onRatingError={this.handleListener('onRatingRetrieve', 'error')}
+                // Android events
+                onRatingOperationSuccess={this.handleListener('onRatingRetrieve', 'user')}
+                onError={this.handleListener('onRatingRetrieve', 'error')}
             />
         );
-    }
-
-    // iOS Events
-    _onRatingRetrieve(rating) {
-        if(!this.props.onRatingRetrieve) {
-            return;
-        }
-        console.log("_onRatingRetrieve -> ", rating)
-        this.props.onRatingRetrieve(rating)
-    }
-
-    _onRatingDeleted(rating) {
-        if(!this.props.onRatingDeleted) {
-            return;
-        }
-        console.log("_onRatingDeleted -> ", rating)
-        this.props.onRatingDeleted(rating)
-    }
-
-    _onRatingUpdated(rating) {
-        if(!this.props.onRatingUpdated) {
-            return;
-        }
-        console.log("_onRatingUpdated -> ", rating)
-        this.props.onRatingUpdated(rating)
-    }
-
-    _onRatingError(error) {
-        if(!this.props.onRatingError) {
-            return;
-        }
-        console.log("_onRatingError -> ", error)
-        this.props.onRatingError(error)
-    }
-
-    // Android events
-    _onRatingOperationSuccess(user) {
-        console.log('rating success! -> ', user);
-        if(!this.props.onRatingOperationSuccess) {
-            return;
-        }
-        this.props.onRatingOperationSuccess(user);
-    }
-
-    _onError(error) {
-        console.log('rating error! -> ', error);
-        if(!this.props.onError) {
-            return;
-        }
-        this.props.onError(error);
     }
 }

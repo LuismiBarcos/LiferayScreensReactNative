@@ -213,3 +213,22 @@ export interface ImageGalleryScreenletProps {
     // There are more events in Android. For now we not handle them
 }
 export class ImageGalleryScreenlet extends BaseScreenlet<ImageGalleryScreenletProps> {}
+
+export interface RatingScreenletProps {
+    // Attributes
+    autoLoad: boolean;
+    editable: boolean;
+    entryId: number;
+    className: string;
+    classPK: number;
+    groupId: number;
+    // iOS events
+    onRatingRetrieve: (event: any) => void;
+    onRatingDeleted: (event: any) => void;
+    onRatingUpdated: (event: any) => void;
+    onRatingError: (event: any) => void;
+    // Android events
+    onRatingOperationSuccess: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class RatingScreenlet extends BaseScreenlet<RatingScreenletProps> {}
