@@ -7,53 +7,20 @@ import {
 } from 'react-native'
 
 import NativeBlogsEntryDisplayScreenlet from './Bridges/BlogsEntryDisplayScreenlet';
+import BaseScreenlet from '../Base/BaseScreenlet';
 
-export default class BlogsEntryDisplayScreenlet extends Component {
+export default class BlogsEntryDisplayScreenlet extends BaseScreenlet {
     render(){
         return(
             <NativeBlogsEntryDisplayScreenlet 
                 {...this.props}
                 //iOS events
-                onBlogEntryResponse={this._onBlogEntryResponse.bind(this)}
-                onBlogEntryError={this._onBlogEntryError.bind(this)}
+                onBlogEntryResponse={this.handleListener('onBlogEntryResponse', 'blogEntry')}
+                onBlogEntryError={this.handleListener('onBlogEntryResponse', 'error')}
                 // Android events
-                onRetrieveAssetSuccess = {this._onRetrieveAssetSuccess.bind(this)}
-                onError = {this._onError.bind(this)}
+                onRetrieveAssetSuccess={this.handleListener('onBlogEntryResponse', 'assetEntry')}
+                onError={this.handleListener('onBlogEntryResponse', 'error')}
             />
         );
-    }
-
-    // iOS events
-    _onBlogEntryResponse(blogEntry) {
-        console.log('_onBlogEntryResponse -> ', blogEntry);
-        if(!this.props.onBlogEntryResponse) {
-            return;
-        }
-        this.props.onBlogEntryResponse(blogEntry);
-    }
-
-    _onBlogEntryError(error) {
-        console.log('_onBlogEntryError -> ', error);
-        if(!this.props.onBlogEntryError) {
-            return;
-        }
-        this.props.onBlogEntryError(error);
-    }
-
-    // Android events
-    _onRetrieveAssetSuccess(assetEntry) {
-        console.log('_onRetrieveAssetSuccess -> ', assetEntry);
-        if(!this.props.onRetrieveAssetSuccess) {
-            return;
-        }
-        this.props.onRetrieveAssetSuccess(assetEntry);
-    }
-
-    _onError(error) {
-        console.log('_onError -> ', error);
-        if(!this.props.onError) {
-            return;
-        }
-        this.props.onError(error);
     }
 }

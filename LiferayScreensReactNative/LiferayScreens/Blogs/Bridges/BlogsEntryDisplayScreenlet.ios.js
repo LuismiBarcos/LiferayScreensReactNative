@@ -8,7 +8,7 @@ export default class BlogsEntryDisplayScreenlet extends Component {
     constructor(props) {
         super(props);
         
-        this.state = {
+        this.screenletAttributes = {
             assetEntryId: props.assetEntryId || 0,
             className: props.className || "",
             classPK: props.classPK || 0,
@@ -19,25 +19,8 @@ export default class BlogsEntryDisplayScreenlet extends Component {
         return(
             <NativeBlogsEntryDisplayScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
-                onBlogEntryResponse={this._onBlogEntryResponse.bind(this)}
-                onBlogEntryError={this._onBlogEntryError.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onBlogEntryResponse(event) {
-        if(!this.props.onBlogEntryResponse) {
-            return;
-        }
-        this.props.onBlogEntryResponse(event.nativeEvent.blogEntry);
-    }
-
-    _onBlogEntryError(event) {
-        if(!this.props.onBlogEntryError) {
-            return;
-        }
-        this.props.onBlogEntryError(event.nativeEvent.error);
     }
 }

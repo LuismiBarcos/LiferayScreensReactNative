@@ -13,8 +13,20 @@ export default class BlogsEntryDisplay extends Component {
                 // assetEntryId={40516}
                 classPK={40515}
                 className={"com.liferay.blogs.kernel.model.BlogsEntry"} // -> Only for android
+                // iOS Events
+                onBlogEntryResponse={this._onBlogEntryResponse}
+                // Android Events
+                onRetrieveAssetSuccess={this._onRetrieveAssetSuccess}
             />
         );
+    }
+
+    _onBlogEntryResponse(blogEntry) {
+        console.log('USUARIO --> _onBlogEntryResponse ', blogEntry);
+    }
+
+    _onRetrieveAssetSuccess(assetEntry) {
+        console.log('USUARIO --> _onRetrieveAssetSuccess ', assetEntry);
     }
 }
 const { height, width } = Dimensions.get('window');

@@ -8,20 +8,18 @@ const NativeBlogsEntryDisplayScreenlet = requireNativeComponent('BlogsEntryDispl
 export default class BlogsEntryDisplayScreenlet extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.screenletAttributes = {
             entryId: props.entryId || 0,
             autoLoad: props.autoLoad || true,
             className: props.className || "",
             classPK: props.classPK || 0,
         }
-        this._onRetrieveAssetSuccess = this._onRetrieveAssetSuccess.bind(this);
-        this._onError = this._onError.bind(this);
     }
 
     componentWillMount() {
         // Events
-        DeviceEventEmitter.addListener('onBlogsEntryDisplayScreenletRetrieveAssetSuccess', this._onRetrieveAssetSuccess);
-        DeviceEventEmitter.addListener('onBlogsEntryDisplayScreenletError', this._onError);
+        DeviceEventEmitter.addListener('onBlogsEntryDisplayScreenletRetrieveAssetSuccess', this.props.onRetrieveAssetSuccess);
+        DeviceEventEmitter.addListener('onBlogsEntryDisplayScreenletError', this.props.onError);
     }
 
     componentWillUnmount(){
@@ -32,23 +30,8 @@ export default class BlogsEntryDisplayScreenlet extends Component {
         return(
             <NativeBlogsEntryDisplayScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onRetrieveAssetSuccess(event) {
-        if(!this.props.onRetrieveAssetSuccess) {
-            return;
-        }
-        this.props.onRetrieveAssetSuccess(JSON.parse(event.assetEntry));
-    }
-
-    _onError(event) {
-        if(!this.props.onError) {
-            return;
-        }
-        this.props.onError(event.error);
     }
 }
