@@ -279,3 +279,19 @@ export interface CommentDisplayScreenletProps {
     onError: (event: any) => void;
 }
 export class CommentDisplayScreenlet extends BaseScreenlet<CommentDisplayScreenletProps> {}
+
+export interface CommentAddScreenletProps {
+    // Attributes
+    className: string;
+    classPK: number;
+    // iOS events
+    onCommentAdded: (event: any) => void;
+    onAddCommentError: (event: any) => void;
+    onCommentUpdated: (event: any) => void;
+    onUpdateCommentError: (event: any) => void;
+    // Android events
+    onAddCommentSuccess: (event: any) => void;
+    onError: (event: any) => void;
+
+}
+export class CommentAddScreenlet extends BaseScreenlet<CommentAddScreenletProps> {}

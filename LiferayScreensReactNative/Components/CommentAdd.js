@@ -11,8 +11,20 @@ export default class CommentAdd extends Component {
                 style={styles.commentAdd}
                 classPK={74606}
                 className={"com.liferay.document.library.kernel.model.DLFileEntry"}
+                // iOS Events
+                onCommentAdded={this._onCommentAdded}
+                // Android Events
+                onAddCommentSuccess={this._onAddCommentSuccess}
             />
         );
+    }
+
+    _onCommentAdded(comment) {
+        console.log('USUARIO --> _onCommentAdded ', comment);
+    }
+
+    _onAddCommentSuccess(comment) {
+        console.log('USUARIO --> _onAddCommentSuccess ', comment);
     }
 }
 
