@@ -12,8 +12,20 @@ export default class ImageDisplay extends Component {
         style={styles.image}
         className={"com.liferay.document.library.kernel.model.DLFileEntry"}
         classPK={54498}
+        // iOS Events
+        onFileAssetResponse={this._onFileAssetResponse}
+        // Android Events
+        onRetrieveAssetSuccess={this._onRetrieveAssetSuccess}
       />
     );
+  }
+
+  _onFileAssetResponse(url) {
+    console.log('USUARIO --> _onFileAssetResponse ', url);
+  }
+
+  _onRetrieveAssetSuccess(assetEntry) {
+    console.log('USUARIO --> _onFileAssetResponse ', assetEntry);
   }
 }
 

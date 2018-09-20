@@ -330,3 +330,19 @@ export interface BlogsEntryDisplayScreenletProps {
     onError: (event: any) => void;
 }
 export class BlogsEntryDisplayScreenlet extends BaseScreenlet<BlogsEntryDisplayScreenletProps> {}
+
+export interface ImageDisplayScreenletProps {
+    // Attributes
+    autoLoad: boolean;
+    entryId: number;
+    className: string;
+    classPK: number;
+    assetEntryId: number;
+    // iOS Events
+    onFileAssetResponse: (event: any) => void;
+    onFileAssetError: (event: any) => void;
+    // Android Events
+    onRetrieveAssetSuccess: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class ImageDisplayScreenlet extends BaseScreenlet<ImageDisplayScreenletProps> {}
