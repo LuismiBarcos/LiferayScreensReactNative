@@ -259,3 +259,23 @@ export interface CommentListScreenletProps {
     onError: (event: any) => void;
 }
 export class CommentListScreenlet extends BaseScreenlet<CommentListScreenletProps> {}
+
+export interface CommentDisplayScreenletProps {
+    // Attributes
+    commentId:number;
+    autoLoad: boolean;
+    editable: boolean;
+    // iOS events
+    onCommentLoaded: (event: any) => void;
+    onLoadCommentError: (event: any) => void;
+    onCommentDeleted: (event: any) => void;
+    onDeleteComment: (event: any) => void;
+    onCommentUpdated: (event: any) => void;
+    onUpdateComment: (event: any) => void;
+    // Android events
+    onLoadCommentSuccess: (event: any) => void;
+    onDeleteCommentSuccess: (event: any) => void;
+    onUpdateCommentSuccess: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class CommentDisplayScreenlet extends BaseScreenlet<CommentDisplayScreenletProps> {}

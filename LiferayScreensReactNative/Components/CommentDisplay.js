@@ -10,8 +10,20 @@ export default class CommentDisplay extends Component {
             <CommentDisplayScreenlet 
                 style={styles.comment}
                 commentId={63710}
+                // iOS Events
+                onCommentLoaded={this._onCommentLoaded}
+                // Android Events
+                onLoadCommentSuccess={this._onLoadCommentSuccess}
             />
         );
+    }
+
+    _onCommentLoaded(comment) {
+        console.log('USUARIO --> _onCommentLoaded ', comment);
+    }
+
+    _onLoadCommentSuccess(comment) {
+        console.log('USUARIO --> _onCommentLoaded ', comment);
     }
 }
 
