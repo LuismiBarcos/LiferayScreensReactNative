@@ -13,15 +13,35 @@ export default class BaseScreenlet extends Component {
             if (!this.props[methodName]) {
                 return;
             }
-           const eventAtributes =  attributeNames.map (attributeName => {
-                if (Platform.OS === "android") {
-                    return event[attributeName];
-                }
-                else if (Platform.OS === "ios") {
-                    return event.nativeEvent[attributeName];
-                }
-            })
-            this.props[methodName](...eventAtributes)
+            const eventAtributes = this.extractAttributes(event, ...attributeNames );
+            this.props[methodName](...eventAtributes);
+        }
+    }
+
+    extractAttributes(event, ...attributeNames) {
+        return attributeNames.map (attributeName => {
+            if (Platform.OS === "android") {
+                return this._parseJsonIfNeeded(event[attributeName])
+            }
+            else if (Platform.OS === "ios") {
+                return event.nativeEvent[attributeName];
+            }
+        })
+    }
+
+    _parseJsonIfNeeded(eventAtribute) {
+        if (typeof eventAtribute === 'string') {
+            return this._parseJson(eventAtribute)
+        } else {
+            return eventAtribute
+        }
+    }
+
+    _parseJson(eventAtribute) {
+        try {
+            eventAtribute = JSON.parse(eventAtribute);
+        } finally {
+            return eventAtribute
         }
     }
 }

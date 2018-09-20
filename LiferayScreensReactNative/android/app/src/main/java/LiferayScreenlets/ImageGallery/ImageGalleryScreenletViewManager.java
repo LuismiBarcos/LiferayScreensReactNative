@@ -131,7 +131,7 @@ public class ImageGalleryScreenletViewManager extends SimpleViewManager<ImageGal
     @Override
     public void onListItemSelected(ImageEntry imageEntry, View view) {
         WritableMap event = Arguments.createMap();
-        event.putString("item", new JSONObject(imageEntry.getValues()).toString());
+        event.putString("image", new JSONObject(imageEntry.getValues()).toString());
         EventEmitter.sendEvent(this.reactContext,"onImageGalleryScreenletItemSelected", event);
     }
 

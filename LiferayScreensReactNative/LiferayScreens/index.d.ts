@@ -166,6 +166,7 @@ export interface WebContentDisplayScreenletProps {
 export class WebContentDisplayScreenlet extends BaseScreenlet<WebContentDisplayScreenletProps>{}
 
 export interface WebContentListScreenletProps {
+    // Attributes
     autoLoad: boolean;
     folderId: number;
     groupId: number;
@@ -184,3 +185,31 @@ export interface WebContentListScreenletProps {
     onError: (event: any) => void;
 }
 export class WebContentListScreenlet extends BaseScreenlet<WebContentListScreenletProps> {}
+
+export interface ImageGalleryScreenletProps {
+    // Attributes
+    repositoryId: number;
+    folderId: number;
+    autoLoad: boolean;
+    refreshControl: boolean;
+    firstPageSize: number;
+    pageSize: number;
+    // Common events
+    onItemSelected: (event: any) => void;
+    // iOS events
+    onContentsReceived: (event: any) => void;
+    onGalleryError: (event: any) => void;
+    onImageEntryDeleted: (event: any) => void;
+    onImageEntryDeleteError: (event: any) => void;
+    onImageUploadStart: (event: any) => void;
+    onImageUploadProgress: (event: any) => void;
+    onImageUploadError: (event: any) => void;
+    onImageUploaded: (event: any) => void;
+    onImageUploadDetailViewCreated: (event: any) => void;
+    // Android events
+    onListPageFailed: (event: any) => void;
+    onListPageReceived: (event: any) => void;
+    onImageGalleryError: (event: any) => void;
+    // There are more events in Android. For now we not handle them
+}
+export class ImageGalleryScreenlet extends BaseScreenlet<ImageGalleryScreenletProps> {}

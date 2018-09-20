@@ -12,9 +12,27 @@ export default class ImageGallery extends Component {
                     style={styles.gallery}
                     folderId={72155}
                     repositoryId={20143}
+                    // common events
+                    onItemSelected={this._onItemSelected}
+                    // iOS events
+                    onContentsReceived={this._onContentsReceived}
+                    // android events
+                    onListPageReceived={this._onListPageReceived}
                 />
             </View>
         );
+    }
+
+    _onItemSelected(image) {
+        console.log('USUARIO --> _onItemSelected ', image);
+    }
+
+    _onContentsReceived(images) {
+        console.log('USUARIO --> _onContentsReceived ', images);
+    }
+
+    _onListPageReceived(images) {
+        console.log('USUARIO --> _onListPageReceived ', images);
     }
 }
 

@@ -9,36 +9,26 @@ export default class ImageGalleryScreenlet extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
+        this.screenletAttributes = {
             repositoryId: props.repositoryId || 0,
             folderId: props.folderId || 0,
             autoLoad: props.autoLoad || true,
             firstPageSize: props.firstPageSize || 50,
             pageSize: props.pageSize || 25
         }
-
-        this._onImageEntryDeleted = this._onImageEntryDeleted.bind(this);
-        this._onImageUploadStarted = this._onImageUploadStarted.bind(this);
-        this._onImageUploadProgress = this._onImageUploadProgress.bind(this);
-        this._onImageUploadEnd = this._onImageUploadEnd.bind(this);
-        this._onShowUploadImageView = this._onShowUploadImageView.bind(this);
-        this._onListPageFailed = this._onListPageFailed.bind(this);
-        this._onListPageReceived = this._onListPageReceived.bind(this);
-        this._onItemSelected = this._onItemSelected.bind(this);
-        this._onImageGalleryError = this._onImageGalleryError.bind(this);
     }
     
     componentWillMount() {
         // Events
-        DeviceEventEmitter.addListener('onImageGalleryScreenletImageEntryDeleted', this._onImageEntryDeleted);
-        DeviceEventEmitter.addListener('onImageGalleryScreenletImageUploadStarted', this._onImageUploadStarted);
-        DeviceEventEmitter.addListener('onImageGalleryScreenletImageUploadProgress', this._onImageUploadProgress);
-        DeviceEventEmitter.addListener('onImageGalleryScreenletImageUploadEnd', this._onImageUploadEnd);
-        DeviceEventEmitter.addListener('onImageGalleryScreenletShowUploadImageView', this._onShowUploadImageView);
-        DeviceEventEmitter.addListener('onImageGalleryScreenletListPageFailed', this._onListPageFailed);
-        DeviceEventEmitter.addListener('onImageGalleryScreenletListPageReceived', this._onListPageReceived);
-        DeviceEventEmitter.addListener('onImageGalleryScreenletItemSelected', this._onItemSelected);
-        DeviceEventEmitter.addListener('onImageGalleryScreenletImageGalleryError', this._onImageGalleryError);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletImageEntryDeleted', this.props.onImageEntryDeleted);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletImageUploadStarted', this.props.onImageUploadStarted);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletImageUploadProgress', this.props.onImageUploadProgress);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletImageUploadEnd', this.props.onImageUploadEnd);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletShowUploadImageView', this.props.onShowUploadImageView);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletListPageFailed', this.props.onListPageFailed);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletListPageReceived', this.props.onListPageReceived);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletItemSelected', this.props.onItemSelected);
+        DeviceEventEmitter.addListener('onImageGalleryScreenletImageGalleryError', this.props.onImageGalleryError);
     }
     
     componentWillUnmount(){
@@ -49,7 +39,7 @@ export default class ImageGalleryScreenlet extends Component {
         return(
             <NativeImageGalleryScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
+                screenletAttributes={this.screenletAttributes}
             />
         );
     }
