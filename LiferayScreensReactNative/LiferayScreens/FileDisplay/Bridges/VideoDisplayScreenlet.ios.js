@@ -7,7 +7,7 @@ const NativeVideoDisplayScreenlet = requireNativeComponent('VideoDisplayScreenle
 export default class VideoDisplayScreenlet extends Component {
     constructor(props) {
         super(props)
-        this.state = {
+        this.screenletAttributes = {
             assetEntryId: props.entryId || 0,
             autoLoad: props.autoLoad || true,
             className: props.className || "",
@@ -18,25 +18,8 @@ export default class VideoDisplayScreenlet extends Component {
         return(
             <NativeVideoDisplayScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
-                onFileAssetResponse={this._onFileAssetResponse.bind(this)}
-                onFileAssetError={this._onFileAssetError.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events    
-    _onFileAssetResponse(event) {
-        if(!this.props.onFileAssetResponse) {
-            return;
-        }
-        this.props.onFileAssetResponse(event.nativeEvent.url)
-    }
-
-    _onFileAssetError(event) {
-        if(!this.props.onFileAssetError) {
-            return;
-        }
-        this.props.onFileAssetError(event.nativeEvent.error)
     }
 }

@@ -346,3 +346,22 @@ export interface ImageDisplayScreenletProps {
     onError: (event: any) => void;
 }
 export class ImageDisplayScreenlet extends BaseScreenlet<ImageDisplayScreenletProps> {}
+
+export interface VideoDisplayScreenletProps {
+    // Attributes
+    entryId: number;
+    autoLoad: boolean;
+    className: string;
+    classPK: number;
+    assetEntryId: number;
+    // iOS Events
+    onFileAssetResponse: (event: any) => void;
+    onFileAssetError: (event: any) => void;
+    // Android Events
+    onVideoPrepared: (event: any) => void;
+    onVideoError: (event: any) => void;
+    onVideoCompleted: (event: any) => void;
+    onRetrieveAssetSuccess: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class VideoDisplayScreenlet extends BaseScreenlet<VideoDisplayScreenletProps> {}
