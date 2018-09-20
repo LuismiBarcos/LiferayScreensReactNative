@@ -7,7 +7,7 @@ const NativeWebContentListScreenlet = requireNativeComponent('WebContentListScre
 export default class WebContentListScreenlet extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.screenletAttributes = {
             groupId: props.groupId || 0,
             folderId: props.folderId || 0,
             autoLoad: props.autoLoad || true,
@@ -20,33 +20,8 @@ export default class WebContentListScreenlet extends Component {
         return(
             <NativeWebContentListScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
-                onWebContentListResponse={this._onWebContentListResponse.bind(this)}
-                onWebContentListError={this._onWebContentListError.bind(this)}
-                onWebContentSelected={this._onWebContentSelected.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onWebContentListResponse(event){
-        if(!this.props.onWebContentListResponse) {
-            return;
-        }
-        this.props.onWebContentListResponse(event.nativeEvent.contents);
-    }
-
-    _onWebContentListError(event){
-        if(!this.props.onWebContentListError) {
-            return;
-        }
-        this.props.onWebContentListError(event.nativeEvent.error);
-    }
-
-    _onWebContentSelected(event){
-        if(!this.props.onWebContentSelected) {
-            return;
-        }
-        this.props.onWebContentSelected(event.nativeEvent.content);
     }
 }

@@ -125,6 +125,7 @@ export interface DDLListScreenletProps {
 export class DDLListScreenlet extends BaseScreenlet<DDLListScreenletProps> {}
 
 export interface AssetListScreenletProps {
+    // Attributes
     groupId: number;
     classNameId: number;
     portletItemName: string;
@@ -145,11 +146,41 @@ export interface AssetListScreenletProps {
 export class AssetListScreenlet extends BaseScreenlet<AssetListScreenletProps> {}
 
 export interface WebContentDisplayScreenletProps {
+    // Attributes
     groupId: number;
     articleId: string;
     templateId: number;
     structureId: number;
     autoLoad: boolean;
+    // iOS Events
+    onWebContentResponse: (event: any) => void;
+    onRecordContentResponse: (event: any) => void;
+    onWebContentError: (event: any) => void;
+    // Android Events
+    onWebContentReceived: (event: any) => void;
+    onWebContentTouched: (event: any) => void;
+    onError: (event: any) => void;
+    // Common events
+    onUrlClicked: (event: any) => void;
 }
 export class WebContentDisplayScreenlet extends BaseScreenlet<WebContentDisplayScreenletProps>{}
 
+export interface WebContentListScreenletProps {
+    autoLoad: boolean;
+    folderId: number;
+    groupId: number;
+    labelFields: string;
+    firstPageSize: number;
+    pageSize: number;
+    refreshControl: boolean;
+    // iOS Events
+    onWebContentListResponse: (event: any) => void;
+    onWebContentListError: (event: any) => void;
+    onWebContentSelected: (event: any) => void;
+    // Android Events
+    onListPageFailed: (event: any) => void;
+    onListPageReceived: (event: any) => void;
+    onListItemSelected: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class WebContentListScreenlet extends BaseScreenlet<WebContentListScreenletProps> {}

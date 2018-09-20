@@ -13,7 +13,7 @@ export default class WebContent extends Component {
                 // iOS Events
                 onWebContentResponse={this._onWebContentResponse}
                 // Android Events
-                onWebContentReceived={this._onWebContentReceived}                
+                onWebContentReceived={this._onWebContentReceived}
             />
         );
     }
