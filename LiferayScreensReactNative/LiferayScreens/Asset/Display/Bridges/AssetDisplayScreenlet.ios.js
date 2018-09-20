@@ -7,7 +7,7 @@ const NativeAssetDisplayScreenlet = requireNativeComponent('AssetDisplayScreenle
 export default class AssetDisplayScreenlet extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.screenletAttributes = {
             assetEntryId: props.assetEntryId || 0,
             className: props.className || "",
             classPK: props.classPK || 0,
@@ -19,41 +19,8 @@ export default class AssetDisplayScreenlet extends Component {
         return(
             <NativeAssetDisplayScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
-                onAssetResponse={this._onAssetResponse.bind(this)}
-                onAssetError={this._onAssetError.bind(this)}
-                onConfigureScreenlet={this._onConfigureScreenlet.bind(this)}
-                onAsset={this._onAsset.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onAssetResponse(event) {
-        if(!this.props.onAssetResponse) {
-            return;
-        }
-        this.props.onAssetResponse(event.nativeEvent.asset);
-    }
-
-    _onAssetError(event) {
-        if(!this.props.onAssetError) {
-            return;
-        }
-        this.props.onAssetError(event.nativeEvent.error);
-    }
-
-    _onConfigureScreenlet(event) {
-        if(!this.props.onConfigureScreenlet) {
-            return;
-        }
-        this.props.onConfigureScreenlet(event.nativeEvent.childScreenlet ,event.nativeEvent.asset);
-    }
-
-    _onAsset(event) {
-        if(!this.props.onAsset) {
-            return;
-        }
-        this.props.onAsset(event.nativeEvent.asset);
     }
 }

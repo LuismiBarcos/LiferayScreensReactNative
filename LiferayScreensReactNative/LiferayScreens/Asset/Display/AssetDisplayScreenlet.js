@@ -7,67 +7,22 @@ import {
 } from 'react-native'
 
 import NativeAssetDisplayScreenlet from './Bridges/AssetDisplayScreenlet';
+import BaseScreenlet from '../../Base/BaseScreenlet';
 
-export default class AssetDisplayScreenlet extends Component {
+export default class AssetDisplayScreenlet extends BaseScreenlet {
     render() {
         return(
             <NativeAssetDisplayScreenlet 
                 {...this.props}
-                onAssetResponse={this._onAssetResponse.bind(this)}
-                onAssetError={this._onAssetError.bind(this)}
-                onConfigureScreenlet={this._onConfigureScreenlet.bind(this)}
-                onAsset={this._onAsset.bind(this)}
+                // iOS Events
+                onAssetResponse={this.handleListener('onAssetResponse', 'asset')}
+                onAssetError={this.handleListener('onAssetError', 'error')}
+                onConfigureScreenlet={this.handleListener('onConfigureScreenlet', 'asset')}
+                onAsset={this.handleListener('onAsset', 'asset')}
+                // Android Events
+                onRetrieveAssetSuccess={this.handleListener('onRetrieveAssetSuccess', 'assetEntry')}
+                onError={this.handleListener('onError', 'error')}
             />
         );
-    }
-
-    // iOS events
-    _onAssetResponse(asset) {
-        console.log('_onAssetResponse -> ',asset);
-        if(!this.props.onAssetResponse) {
-            return;
-        }
-        this.props.onAssetResponse(asset);
-    }
-
-    _onAssetError(error) {
-        console.log('_onAssetError -> ',error);
-        if(!this.props.onAssetError) {
-            return;
-        }
-        this.props.onAssetError(error);
-    }
-
-    _onConfigureScreenlet(childScreenlet, asset) {
-        console.log('_onConfigureScreenlet -> ',childScreenlet, asset);
-        if(!this.props.onConfigureScreenlet) {
-            return;
-        }
-        this.props.onConfigureScreenlet(childScreenlet ,asset);
-    }
-
-    _onAsset(asset) {
-        console.log('_onAsset -> ', asset);
-        if(!this.props.onAsset) {
-            return;
-        }
-        this.props.onAsset(asset);
-    }
-
-    // Android events
-    _onRetrieveAssetSuccess(assetEntry) {
-        console.log('_onRetrieveAssetSuccess -> ', assetEntry);
-        if(!this.props.onRetrieveAssetSuccess) {
-            return;
-        }
-        this.props.onRetrieveAssetSuccess(assetEntry);
-    }
-
-    _onError(error) {
-        console.log('_onError -> ', error);
-        if(!this.props.onError) {
-            return;
-        }
-        this.props.onError(error);
     }
 }

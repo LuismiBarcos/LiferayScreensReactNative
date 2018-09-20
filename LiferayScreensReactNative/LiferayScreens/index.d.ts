@@ -295,3 +295,23 @@ export interface CommentAddScreenletProps {
 
 }
 export class CommentAddScreenlet extends BaseScreenlet<CommentAddScreenletProps> {}
+
+export interface AssetDisplayScreenletProps {
+    // Attributes
+    autoLoad: boolean;
+    entryId: number;
+    className: string;
+    classPK: number;
+    portletItemName: string;
+    assetEntryId: number;
+    // iOS Events
+    onAssetResponse: (event: any) => void;
+    onAssetError: (event: any) => void;
+    onConfigureScreenlet: (event: any) => void;
+    onAsset: (event: any) => void;
+    // Android Events
+    onRetrieveAssetSuccess: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class AssetDisplayScreenlet extends BaseScreenlet<AssetDisplayScreenletProps> {}
+
