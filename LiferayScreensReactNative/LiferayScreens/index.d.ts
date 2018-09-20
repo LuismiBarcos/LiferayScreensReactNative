@@ -232,3 +232,30 @@ export interface RatingScreenletProps {
     onError: (event: any) => void;
 }
 export class RatingScreenlet extends BaseScreenlet<RatingScreenletProps> {}
+
+export interface CommentListScreenletProps {
+    // Attributes
+    className: string;
+    classPK: number;
+    editable: boolean;
+    autoLoad: boolean;
+    refreshControl: boolean;
+    firstPageSize: number;
+    pageSize: number;
+    // iOS Events
+    onListResponseComments: (event: any) => void;
+    onCommentListError: (event: any) => void;
+    onSelectedComment: (event: any) => void;
+    onDeletedComment: (event: any) => void;
+    onCommentDelete: (event: any) => void;
+    onUpdatedComment: (event: any) => void;
+    onCommentUpdate: (event: any) => void;
+    // Android Events
+    onDeleteCommentSuccess: (event: any) => void;
+    onUpdateCommentSuccess: (event: any) => void;
+    onListPageFailed: (event: any) => void;
+    onListPageReceived: (event: any) => void;
+    onListItemSelected: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class CommentListScreenlet extends BaseScreenlet<CommentListScreenletProps> {}
