@@ -90,7 +90,7 @@ class WebScreenletView: RCTView, WebScreenletDelegate {
   // MARK: WebScreenletDelegate methods
   
   func onWebLoad(_ screenlet: WebScreenlet, url: String) {
-    let event = self.createEvent(attributeName: "url", attribute: url)
+    let event = self.createEvent(attributeName: "page", attribute: url)
     self.onPageLoaded?(event)
   }
   

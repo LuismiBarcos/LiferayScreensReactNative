@@ -7,65 +7,22 @@ import {
 } from 'react-native'
 
 import NativeWebScreenlet from './Bridges/WebScreenlet'
+import BaseScreenlet from '../Base/BaseScreenlet';
 
-export default class WebScreenlet extends Component {
+export default class WebScreenlet extends BaseScreenlet {
     render() {
         return(
             <NativeWebScreenlet 
                 {...this.props}
+                // Common Events
+                onPageLoaded={this.handleListener('onPageLoaded', 'page')}
                 // iOS Events
-                onWebError={this._onWebError.bind(this)}
-                onNotify={this._onNotify.bind(this)}
-                // android events
-                onScriptMessageHandler = {this._onScriptMessageHandler.bind(this)}
-                onError = {this._onError.bind(this)}
-                // Common events
-                onPageLoaded = {this._onPageLoaded.bind(this)}
+                onWebError={this.handleListener('onWebError', 'error')}
+                onNotify={this.handleListener('onNotify', 'namespace', 'message')}
+                // Android Events
+                onScriptMessageHandler={this.handleListener('onScriptMessageHandler', 'message')}
+                onError={this.handleListener('onError', 'error')}
             />
         );
-    }
-
-
-    // Common events
-    _onPageLoaded(url) {
-        console.log('_onPageLoaded -> ', url)
-        if(!this.props.onPageLoaded){
-            return;
-        }
-        this.props.onPageLoaded(url)
-    }
-
-    // iOS events
-    _onWebError(error) {
-        console.log('_onWebError -> ', error)
-        if(!this.props.onWebError){
-            return;
-        }
-        this.props.onWebError(error)
-    }
-
-    _onNotify(namespace, message) {
-        console.log('_onNotify -> ', namespace, message)
-        if(!this.props.onNotify){
-            return;
-        }
-        this.props.onNotify(namespace, message);
-    }
-
-    // Android events
-    _onScriptMessageHandler(message) {
-        console.log('_onScriptMessageHandler -> ', message);
-        if(!this.props.onScriptMessageHandler) {
-            return;
-        }
-        this.props.onScriptMessageHandler(message);
-    }
-
-    _onError(error) {
-        console.log('_onError -> ', error);
-        if(!this.props.onError) {
-            return;
-        }
-        this.props.onError(error);
     }
 }

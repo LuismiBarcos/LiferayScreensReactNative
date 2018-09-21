@@ -9,27 +9,21 @@ export default class WebScreenlet extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
+        this.screenletAttributes = {
             URL: props.URL || "",
             jsFileName: props.jsFileName || "",
             cssFileName: props.cssFileName || ""
         }
-
-        this._onPageLoaded = this._onPageLoaded.bind(this);
-        this._onScriptMessageHandler = this._onScriptMessageHandler.bind(this);
-        this._onError = this._onError.bind(this);
     }
 
-    componentWillMount() {
-        // DeviceEventEmitter.addListener('onPageLoaded', this.handleListener('onPageLoaded'))
-        
+    componentWillMount() {        
         // Events
-        DeviceEventEmitter.addListener('onWebScreenletPageLoaded', this._onPageLoaded);
-        DeviceEventEmitter.addListener('onWebScreenletScriptMessageHandler', this._onScriptMessageHandler);
-        DeviceEventEmitter.addListener('onWebScreenletError', this._onError);
+        DeviceEventEmitter.addListener('onWebScreenletPageLoaded', this.props.onPageLoaded);
+        DeviceEventEmitter.addListener('onWebScreenletScriptMessageHandler', this.props.onScriptMessageHandler);
+        DeviceEventEmitter.addListener('onWebScreenletError', this.props.onError);
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         DeviceEventEmitter.removeAllListeners();
     }
 
@@ -37,44 +31,8 @@ export default class WebScreenlet extends Component {
         return(
             <NativeWebScreenlet 
                 {...this.props}
-                // ref={(ref) => this.test = ref }
-                // configuration={JSON.stringify(this.props)}
-                configuration={this.state}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // handleListener(methodName) {
-    //     return (...args) => {
-    //         console.log(`${methodName}, ${args}`);
-    //         if (!this.props[methodName]) {
-    //             return;
-    //         }
-    
-    //         this.props[methodName](...args)
-    //     }
-    // }
-
-    // Events
-
-    _onPageLoaded(event) {
-        if(!this.props.onPageLoaded) {
-            return;
-        }
-        this.props.onPageLoaded(event.page);
-    }
-
-    _onScriptMessageHandler(event) {
-        if(!this.props.onScriptMessageHandler) {
-            return;
-        }
-        this.props.onScriptMessageHandler(event.message);
-    }
-
-    _onError(event) {
-        if(!this.props.onError) {
-            return;
-        }
-        this.props.onError(event.error);
     }
 }

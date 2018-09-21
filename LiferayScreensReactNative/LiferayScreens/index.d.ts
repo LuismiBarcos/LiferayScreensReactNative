@@ -381,3 +381,35 @@ export interface AudioDisplayScreenletProps {
     onError: (event: any) => void;
 }
 export class AudioDisplayScreenlet extends BaseScreenlet<AudioDisplayScreenletProps> {}
+
+export interface PdfDisplayScreenletProps {
+    // Attributes
+    assetEntryId: number;
+    autoLoad: boolean;
+    className: string;
+    classPK: number;
+    entryId: number;
+    // iOS events
+    onFileAssetResponse: (event: any) => void;
+    onFileAssetError: (event: any) => void;
+    // Android events
+    onRetrieveAssetSuccess: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class PdfDisplayScreenlet extends BaseScreenlet<PdfDisplayScreenletProps> {}
+
+export interface WebScreenletProps {
+    // Attributes
+    URL: string;
+    jsFileName: string;
+    cssFileName: string;
+    // Common Events
+    onPageLoaded: (event: any) => void;
+    // iOS Events
+    onWebError: (event: any) => void;
+    onNotify: (event: any) => void;
+    // Android Events
+    onScriptMessageHandler: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class WebScreenlet extends BaseScreenlet<WebScreenletProps> {}

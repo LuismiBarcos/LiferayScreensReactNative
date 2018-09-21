@@ -16,12 +16,17 @@ export default class Web extends Component {
             <WebScreenlet 
                 {...this.props}
                 style={styles.web}
-                URL={"https://www.andorratelecom.ad/"}
+                URL={"/web/guest/"}
+                // URL={"https://www.andorratelecom.ad/"}
                 jsFileName={"MyJs"}
                 cssFileName={"MyCss"}
-                // URL={"/web/guest/"}
+                onPageLoaded={this._onPageLoaded}
             />
         );
+    }
+
+    _onPageLoaded(page) {
+        console.log('USUARIO --> _onPageLoaded ', page);
     }
 }
 

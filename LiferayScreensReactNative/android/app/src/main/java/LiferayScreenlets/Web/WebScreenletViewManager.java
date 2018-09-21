@@ -33,7 +33,7 @@ public class WebScreenletViewManager extends SimpleViewManager<WebScreenlet> imp
         return this.screenlet;
     }
 
-    @ReactProp(name = "configuration")
+    @ReactProp(name = "screenletAttributes")
     public void setConfiguation(WebScreenlet screenlet, ReadableMap props) {
         String url = props.getString("URL");
         String jsFileName = props.getString("jsFileName");
