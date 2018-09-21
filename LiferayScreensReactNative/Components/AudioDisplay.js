@@ -11,8 +11,20 @@ export default class AudioDisplay extends Component {
         style={styles.audio}
         className={"com.liferay.document.library.kernel.model.DLFileEntry"}
         classPK={57433}
+        // iOS Events
+        onFileAssetResponse={this._onFileAssetResponse}
+        // Android Events
+        onRetrieveAssetSuccess={this._onRetrieveAssetSuccess}
       />
     );
+  }
+
+  _onFileAssetResponse(url) {
+    console.log('USUARIO --> _onFileAssetResponse ', url);
+  }
+
+  _onRetrieveAssetSuccess(assetEntry) {
+    console.log('USUARIO --> _onRetrieveAssetSuccess ', assetEntry);
   }
 }
 

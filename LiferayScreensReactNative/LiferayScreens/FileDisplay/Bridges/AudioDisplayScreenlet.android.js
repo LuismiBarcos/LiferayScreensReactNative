@@ -8,20 +8,18 @@ const NativeAudioDisplayScreenlet = requireNativeComponent('AudioDisplayScreenle
 export default class AudioDisplayScreenlet extends Component {
     constructor(props) {
         super(props)
-        this.state = {
+        this.screenletAttributes = {
             entryId: props.entryId || 0,
             autoLoad: props.autoLoad || true,
             className: props.className || "",
             classPK: props.classPK || 0,
         }
-        this._onRetrieveAssetSuccess = this._onRetrieveAssetSuccess.bind(this);
-        this._onError = this._onError.bind(this);
     }
 
     componentWillMount() {
         // Events
-        DeviceEventEmitter.addListener('onAudioDisplayScreenletRetrieveAssetSuccess', this._onRetrieveAssetSuccess);
-        DeviceEventEmitter.addListener('onAudioDisplayScreenletError', this._onError);
+        DeviceEventEmitter.addListener('onAudioDisplayScreenletRetrieveAssetSuccess', this.props.onRetrieveAssetSuccess);
+        DeviceEventEmitter.addListener('onAudioDisplayScreenletError', this.props.onError);
     }
 
     componentWillUnmount(){
@@ -32,23 +30,8 @@ export default class AudioDisplayScreenlet extends Component {
         return(
             <NativeAudioDisplayScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
+                screenletAttributes={this.screenletAttributes}
             />
         );
-    }
-
-    // Events
-    _onRetrieveAssetSuccess(event) {
-        if(!this.props.onRetrieveAssetSuccess) {
-            return;
-        }
-        this.props.onRetrieveAssetSuccess(JSON.parse(event.assetEntry));
-    }
-
-    _onError(event) {
-        if(!this.props.onError) {
-            return;
-        }
-        this.props.onError(event.error);
     }
 }

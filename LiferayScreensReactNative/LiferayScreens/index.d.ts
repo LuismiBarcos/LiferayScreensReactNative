@@ -365,3 +365,19 @@ export interface VideoDisplayScreenletProps {
     onError: (event: any) => void;
 }
 export class VideoDisplayScreenlet extends BaseScreenlet<VideoDisplayScreenletProps> {}
+
+export interface AudioDisplayScreenletProps {
+    // Attributes
+    assetEntryId: number;
+    autoLoad: boolean;
+    className: string;
+    classPK: number;
+    entryId: number;
+    // iOS events
+    onFileAssetResponse: (event: any) => void;
+    onFileAssetError: (event: any) => void;
+    // Android events
+    onRetrieveAssetSuccess: (event: any) => void;
+    onError: (event: any) => void;
+}
+export class AudioDisplayScreenlet extends BaseScreenlet<AudioDisplayScreenletProps> {}
