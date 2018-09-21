@@ -7,33 +7,17 @@ import {
 } from 'react-native'
 
 import NativeFileDisplayScreenlet from './Bridges/FileDisplayScreenlet.ios';
+import BaseScreenlet from '../Base/BaseScreenlet';
 
-export default class FileDisplayScreenlet extends Component {
+export default class FileDisplayScreenlet extends BaseScreenlet {
     render(){
         return(
             <NativeFileDisplayScreenlet 
                 {...this.props}
                 // iOS Events
-                onFileAssetResponse={this._onFileAssetResponse.bind(this)}
-                onFileAssetError={this._onFileAssetError.bind(this)}
+                onFileAssetResponse={this.handleListener('onFileAssetResponse', 'url')}
+                onFileAssetError={this.handleListener('onFileAssetResponse', 'error')}
             />
         );
-    }
-
-    // iOS Events
-    _onFileAssetResponse(url) {
-        console.log('_onFileAssetResponse -> ', url)
-        if(!this.props.onFileAssetResponse) {
-            return;
-        }
-        this.props.onFileAssetResponse(url)
-    }
-
-    _onFileAssetError(error) {
-        console.log('_onFileAssetError -> ', error)
-        if(!this.props.onFileAssetError) {
-            return;
-        }
-        this.props.onFileAssetError(error)
     }
 }

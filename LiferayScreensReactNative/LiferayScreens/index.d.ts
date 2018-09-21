@@ -413,3 +413,11 @@ export interface WebScreenletProps {
     onError: (event: any) => void;
 }
 export class WebScreenlet extends BaseScreenlet<WebScreenletProps> {}
+
+export interface FileDisplayScreenletProps {
+    assetEntryId: number;
+    autoLoad: boolean;
+    className: string;
+    classPK: number;
+}
+export class FileDisplayScreenlet extends BaseScreenlet<FileDisplayScreenletProps> {}

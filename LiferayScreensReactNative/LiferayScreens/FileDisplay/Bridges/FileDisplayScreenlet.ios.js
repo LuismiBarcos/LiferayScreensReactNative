@@ -7,7 +7,7 @@ const NativeFileDisplayScreenlet = requireNativeComponent('FileDisplayScreenlet'
 export default class FileDisplayScreenlet extends Component {
     constructor(props) {
         super(props)
-        this.state = {
+        this.screenletAttributes = {
             assetEntryId: props.entryId || 0,
             autoLoad: props.autoLoad || true,
             className: props.className || "",
@@ -18,9 +18,7 @@ export default class FileDisplayScreenlet extends Component {
         return(
             <NativeFileDisplayScreenlet 
                 {...this.props}
-                screenletAttributes={this.state}
-                onFileAssetResponse={this._onFileAssetResponse.bind(this)}
-                onFileAssetError={this._onFileAssetError.bind(this)}
+                screenletAttributes={this.screenletAttributes}
             />
         );
     }
