@@ -109,6 +109,8 @@
 		A6E056C1215BD633001348D0 /* DDLListView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056C0215BD633001348D0 /* DDLListView_custom.swift */; };
 		A6E056C3215BE780001348D0 /* AssetListView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056C2215BE780001348D0 /* AssetListView_custom.xib */; };
 		A6E056C5215BE7A6001348D0 /* AssetListView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056C4215BE7A6001348D0 /* AssetListView_custom.swift */; };
+		A6E056C7215BEE12001348D0 /* WebContentDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056C6215BEE11001348D0 /* WebContentDisplayView_custom.xib */; };
+		A6E056C9215BEE2F001348D0 /* WebContentDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056C8215BEE2F001348D0 /* WebContentDisplayView_custom.swift */; };
 		A6EAFD82212AFF480072D7C8 /* AssetDisplayScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */; };
 		A6EAFD84212B020F0072D7C8 /* AssetDisplayScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */; };
 		A6EAFD86212B024C0072D7C8 /* AssetDisplayScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */; };
@@ -501,6 +503,8 @@
 		A6E056C0215BD633001348D0 /* DDLListView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLListView_custom.swift; sourceTree = "<group>"; };
 		A6E056C2215BE780001348D0 /* AssetListView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetListView_custom.xib; sourceTree = "<group>"; };
 		A6E056C4215BE7A6001348D0 /* AssetListView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListView_custom.swift; sourceTree = "<group>"; };
+		A6E056C6215BEE11001348D0 /* WebContentDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebContentDisplayView_custom.xib; sourceTree = "<group>"; };
+		A6E056C8215BEE2F001348D0 /* WebContentDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentDisplayView_custom.swift; sourceTree = "<group>"; };
 		A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletView.swift; sourceTree = "<group>"; };
 		A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletManager.swift; sourceTree = "<group>"; };
 		A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetDisplayScreenletModule.m; sourceTree = "<group>"; };
@@ -1023,6 +1027,7 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A6E056C6215BEE11001348D0 /* WebContentDisplayView_custom.xib */,
 				A6E056C2215BE780001348D0 /* AssetListView_custom.xib */,
 				A6E056BE215BD622001348D0 /* DDLListView_custom.xib */,
 				A6E056BA215BC6EB001348D0 /* DDLFormView_custom.xib */,
@@ -1037,6 +1042,7 @@
 				A6E056BC215BC701001348D0 /* DDLFormView_custom.swift */,
 				A6E056C0215BD633001348D0 /* DDLListView_custom.swift */,
 				A6E056C4215BE7A6001348D0 /* AssetListView_custom.swift */,
+				A6E056C8215BEE2F001348D0 /* WebContentDisplayView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1545,6 +1551,7 @@
 				A6E056BF215BD623001348D0 /* DDLListView_custom.xib in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				A6E056B1215B7C9A001348D0 /* ForgotPasswordView_custom.xib in Resources */,
+				A6E056C7215BEE12001348D0 /* WebContentDisplayView_custom.xib in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				A678B5F9210B04720008EB10 /* liferay-server-context.plist in Resources */,
 				A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */,
@@ -1689,6 +1696,7 @@
 				A606391C212C3AF900E78951 /* FileDisplayScreenletModule.m in Sources */,
 				A6EAFD90212C03D30072D7C8 /* BlogsEntryDisplayScreenletView.swift in Sources */,
 				A614514B211B1FAE001335C5 /* CommentListScreenletModule.m in Sources */,
+				A6E056C9215BEE2F001348D0 /* WebContentDisplayView_custom.swift in Sources */,
 				A60638F3212C391C00E78951 /* FileDisplayScreenletView.swift in Sources */,
 				A68F8E5421219F770082A85C /* DDLFormScreenletView.swift in Sources */,
 				A6145149211B19EE001335C5 /* CommentListScreenletView.swift in Sources */,

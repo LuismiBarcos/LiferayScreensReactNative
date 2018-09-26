@@ -10,6 +10,7 @@ export default class WebContent extends Component {
             <WebContentDisplayScreenlet 
                 style={styles.webdisplay}
                 articleId={"57343"}
+                theme={"custom"}
                 // iOS Events
                 onWebContentResponse={this._onWebContentResponse}
                 // Android Events

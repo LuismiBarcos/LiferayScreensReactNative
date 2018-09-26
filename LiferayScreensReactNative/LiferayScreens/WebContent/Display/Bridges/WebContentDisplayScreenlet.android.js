@@ -14,7 +14,8 @@ export default class WebContentDisplayScreenlet extends Component {
             articleId: props.articleId || "",
             templateId: props.templateId || 0,
             structureId: props.structureId || 0,
-            autoLoad: props.autoLoad || true
+            autoLoad: props.autoLoad || true,
+            theme: props.theme || ""
         }
     }
 

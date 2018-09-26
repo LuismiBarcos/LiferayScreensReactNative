@@ -701,7 +701,7 @@ export interface AssetListScreenletProps {
      * Name of the theme which you will use
      */
     theme: string;
-    
+
     // iOS EVENTS
     /**
      * @alias only ios events
@@ -804,6 +804,12 @@ export interface WebContentDisplayScreenletProps {
      * The default value is true. 
      */
     autoLoad: boolean;
+
+    /**
+     * @description
+     * Name of the theme which you will use
+     */
+    theme: string;
     
     // COMMON EVENTS
     /**

@@ -19,6 +19,7 @@ import com.liferay.mobile.screens.webcontent.display.WebContentDisplayScreenlet;
 import java.util.Locale;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class WebContentDisplayViewManager extends SimpleViewManager<WebContentDisplayScreenlet> implements WebContentDisplayListener{
@@ -43,6 +44,16 @@ public class WebContentDisplayViewManager extends SimpleViewManager<WebContentDi
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(WebContentDisplayScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "webcontentdisplay_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.webcontentdisplay_default
+                )
+        );
         this.screenlet.setLocale(new Locale(LiferayLocale.getDefaultSupportedLocale()));
         long groupId = screenletAttributes.getInt("groupId") == 0
                 ? LiferayServerContext.getGroupId()

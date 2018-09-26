@@ -45,11 +45,13 @@ class WebContentDisplayScreenletView: RCTView, WebContentDisplayScreenletDelegat
     let templateId = screenletConfiguration["templateId"]! as! NSNumber
     let structureId = screenletConfiguration["structureId"]! as! NSNumber
     let autoLoad = screenletConfiguration["autoLoad"]! as! Bool
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.groupId = groupId.int64Value
     self.screenlet.articleId = articleId
     self.screenlet.templateId = templateId.int64Value
     self.screenlet.structureId = structureId.int64Value
     self.screenlet.autoLoad = autoLoad
+    self.screenlet.themeName = theme
   }
   
   // MARK: WebContentDisplayScreenletDelegate methods
