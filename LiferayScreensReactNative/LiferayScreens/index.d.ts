@@ -195,6 +195,11 @@ export interface SignUpScreenletProps {
      */
     saveCredentials: boolean;
 
+    /**
+     * @description
+     * Name of the theme which you will use
+     */
+    theme: string;
     // COMMON EVENTS
     /**
      * @alias common event

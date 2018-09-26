@@ -97,6 +97,8 @@
 		A68F8E5621219F8B0082A85C /* DDLFormScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A68F8E5521219F8B0082A85C /* DDLFormScreenletModule.m */; };
 		A6E056AA215A92BF001348D0 /* LoginView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E05683215A92BE001348D0 /* LoginView_custom.swift */; };
 		A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E05684215A92BE001348D0 /* LoginView_custom.xib */; };
+		A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */; };
+		A6E056AF215B75CD001348D0 /* SignUpView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056AE215B75CD001348D0 /* SignUpView_custom.swift */; };
 		A6EAFD82212AFF480072D7C8 /* AssetDisplayScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */; };
 		A6EAFD84212B020F0072D7C8 /* AssetDisplayScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */; };
 		A6EAFD86212B024C0072D7C8 /* AssetDisplayScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */; };
@@ -477,6 +479,8 @@
 		A68F8E5521219F8B0082A85C /* DDLFormScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDLFormScreenletModule.m; sourceTree = "<group>"; };
 		A6E05683215A92BE001348D0 /* LoginView_custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView_custom.swift; sourceTree = "<group>"; };
 		A6E05684215A92BE001348D0 /* LoginView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView_custom.xib; sourceTree = "<group>"; };
+		A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView_custom.xib; sourceTree = "<group>"; };
+		A6E056AE215B75CD001348D0 /* SignUpView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView_custom.swift; sourceTree = "<group>"; };
 		A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletView.swift; sourceTree = "<group>"; };
 		A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletManager.swift; sourceTree = "<group>"; };
 		A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetDisplayScreenletModule.m; sourceTree = "<group>"; };
@@ -999,8 +1003,10 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */,
 				A6E05683215A92BE001348D0 /* LoginView_custom.swift */,
 				A6E05684215A92BE001348D0 /* LoginView_custom.xib */,
+				A6E056AE215B75CD001348D0 /* SignUpView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1503,6 +1509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				A678B5F9210B04720008EB10 /* liferay-server-context.plist in Resources */,
@@ -1704,6 +1711,7 @@
 				A614515921217CEF001335C5 /* RatingScreenletModule.m in Sources */,
 				A6051B122125A15900897387 /* CommentAddScreenletView.swift in Sources */,
 				A63B0E2321256CA3003000F9 /* VideoDisplayScreenletModule.m in Sources */,
+				A6E056AF215B75CD001348D0 /* SignUpView_custom.swift in Sources */,
 				A6EAFD89212B1CA20072D7C8 /* WebContentListScreenletManager.swift in Sources */,
 				A606392921300B5800E78951 /* RCTViewExtension.swift in Sources */,
 				A6145152211C5218001335C5 /* SignUpScreenletModule.m in Sources */,

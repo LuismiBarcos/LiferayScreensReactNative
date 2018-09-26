@@ -14,6 +14,7 @@ export default class SignUp extends Component {
         return(
             <SignUpScreenlet 
                 style={styles.signup}
+                theme={"custom"}
                 anonymousApiUserName={"test@liferay.com"}
                 anonymousApiPassword={"test11"}
                 onSignUpSuccess={this._onSignUpSuccess.bind(this)}

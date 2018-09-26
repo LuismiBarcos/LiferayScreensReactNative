@@ -44,11 +44,13 @@ class SignUpScreenletView: RCTView, SignUpScreenletDelegate {
     let companyId = screenletConfiguration["companyId"]! as! NSNumber
     let autoLogin = screenletConfiguration["autoLogin"]! as! Bool
     let saveCredentials = screenletConfiguration["saveCredentials"]! as! Bool
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.anonymousApiUserName = anonymousApiUserName
     self.screenlet.anonymousApiPassword = anonymousApiPassword
     self.screenlet.companyId = companyId.int64Value
     self.screenlet.autoLogin = autoLogin
     self.screenlet.saveCredentials = saveCredentials
+    self.screenlet.themeName = theme
   }
   
   // MARK: SignUpScreenletDelegate methods

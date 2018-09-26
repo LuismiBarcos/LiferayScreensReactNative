@@ -17,6 +17,7 @@ import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
 import org.json.JSONObject;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 
 public class SignUpScreenletViewManager extends SimpleViewManager<SignUpScreenlet> implements SignUpListener{
 
@@ -41,6 +42,16 @@ public class SignUpScreenletViewManager extends SimpleViewManager<SignUpScreenle
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(SignUpScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "sign_up_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.sign_up_default
+                )
+        );
         this.screenlet.setAnonymousApiUserName(screenletAttributes.getString("anonymousApiUserName"));
         this.screenlet.setAnonymousApiPassword(screenletAttributes.getString("anonymousApiPassword"));
         long companyId = screenletAttributes.getInt("companyId") == 0
