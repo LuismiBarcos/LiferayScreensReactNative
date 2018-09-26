@@ -18,6 +18,8 @@ import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
 
 import org.json.JSONObject;
 
+import LiferayScreenlets.Base.ThemesFinder;
+
 public class LoginScreenletViewManager extends SimpleViewManager<LoginScreenlet> implements LoginListener{
 
     private final String NAME = "LoginScreenlet";
@@ -48,17 +50,14 @@ public class LoginScreenletViewManager extends SimpleViewManager<LoginScreenlet>
 
     @ReactProp(name = "theme")
     public void setTheme(LoginScreenlet loginScreenlet, String themeName) {
-        this.setScreenletProperties(getLayoutId(themeName));
-    }
-
-    private int getLayoutId(String themeName) {
-        int layoutId = this.reactContext.getResources().getIdentifier(
-                "login_" + themeName,
-                "layout",
-                reactContext.getPackageName());
-        return layoutId != 0
-                ? layoutId
-                : com.liferay.mobile.screens.R.layout.login_default;
+        this.setScreenletProperties(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "login_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.login_default
+                )
+        );
     }
 
     private void setScreenletProperties(@LayoutRes int layoutId) {
