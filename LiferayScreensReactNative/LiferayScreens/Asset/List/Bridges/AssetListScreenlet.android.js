@@ -14,7 +14,8 @@ export default class AssetListScreenlet extends Component {
             portletItemName: props.portletItemName || "",
             classNameId: props.classNameId || 0,
             firstPageSize: props.firstPageSize || 50,
-            pageSize: props.pageSize || 25
+            pageSize: props.pageSize || 25,
+            theme: props.theme || ""
         }
     }
 

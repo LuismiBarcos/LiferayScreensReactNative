@@ -11,6 +11,7 @@ export default class AssetList extends Component {
                 {...this.props}
                 style={styles.assets}
                 classNameId={20015}
+                theme={"custom"}
                 // iOS Event
                 onAssetListResponse={this._onAssetListResponse}
                 onAssetListError={this._onAssetListError}

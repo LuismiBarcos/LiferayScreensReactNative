@@ -46,6 +46,7 @@ class AssetListScreenletView: RCTView, AssetListScreenletDelegate {
     let refreshControl = screenletConfiguration["refreshControl"]! as! Bool
     let firstPageSize = screenletConfiguration["firstPageSize"]! as! NSNumber
     let pageSize = screenletConfiguration["pageSize"]! as! NSNumber
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.groupId = groupId.int64Value
     self.screenlet.classNameId = classNameId.int64Value
     self.screenlet.portletItemName = portletItemName
@@ -53,6 +54,7 @@ class AssetListScreenletView: RCTView, AssetListScreenletDelegate {
     self.screenlet.refreshControl = refreshControl
     self.screenlet.firstPageSize = firstPageSize.intValue
     self.screenlet.pageSize = pageSize.intValue
+    self.screenlet.themeName = theme
   }
   
   // MARK: AssetListScreenletDelegate methods

@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Locale;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class AssetListScreenletViewManager extends SimpleViewManager<AssetListScreenlet> implements BaseListListener{
@@ -41,6 +42,16 @@ public class AssetListScreenletViewManager extends SimpleViewManager<AssetListSc
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(AssetListScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "asset_list_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.asset_list_default
+                )
+        );
         this.screenlet.setLocale(new Locale(LiferayLocale.getDefaultSupportedLocale()));
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         long groupId = screenletAttributes.getInt("groupId") == 0
