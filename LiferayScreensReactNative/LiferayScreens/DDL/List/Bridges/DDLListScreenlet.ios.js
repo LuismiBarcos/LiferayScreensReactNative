@@ -16,6 +16,7 @@ export default class DDLListScreenlet extends Component {
             refreshControl: props.refreshControl || true,
             firstPageSize: props.firstPageSize || 50,
             pageSize: props.pageSize || 25,
+            theme: props.theme || ""
         }
     }
     render() {

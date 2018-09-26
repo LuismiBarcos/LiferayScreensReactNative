@@ -47,6 +47,7 @@ class DDLListScreenletView: RCTView, DDLListScreenletDelegate {
     let refreshControl = screenletConfiguration["refreshControl"]! as! Bool
     let firstPageSize = screenletConfiguration["firstPageSize"]! as! NSNumber
     let pageSize = screenletConfiguration["pageSize"]! as! NSNumber
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.recordSetId = recordSetId.int64Value
     self.screenlet.userId = userId.int64Value
     self.screenlet.labelFields = labelFields
@@ -54,6 +55,7 @@ class DDLListScreenletView: RCTView, DDLListScreenletDelegate {
     self.screenlet.refreshControl = refreshControl
     self.screenlet.firstPageSize = firstPageSize.intValue
     self.screenlet.pageSize = pageSize.intValue
+    self.screenlet.themeName = theme
   }
   
   // MARK: DDLListScreenletDelegate methods

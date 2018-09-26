@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Locale;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class DDLListScreenletViewManager extends SimpleViewManager<DDLListScreenlet> implements BaseListListener {
@@ -43,6 +44,16 @@ public class DDLListScreenletViewManager extends SimpleViewManager<DDLListScreen
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(DDLListScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "ddl_list_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.ddl_list_default
+                )
+        );
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         this.screenlet.setRecordSetId(screenletAttributes.getInt("recordSetId"));
         this.screenlet.setUserId(screenletAttributes.getInt("userId"));

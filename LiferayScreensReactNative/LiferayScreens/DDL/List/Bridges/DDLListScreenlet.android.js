@@ -15,7 +15,8 @@ export default class DDLListScreenlet extends Component {
             userId: props.userId || 0,
             firstPageSize: props.firstPageSize || 50,
             pageSize: props.pageSize || 25,
-            labelFields: props.labelFields || ""
+            labelFields: props.labelFields || "",
+            theme: props.theme || ""
         }
     }
 

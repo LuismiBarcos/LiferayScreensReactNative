@@ -12,6 +12,7 @@ export default class DDLList extends Component {
                 style={styles.ddl}
                 recordSetId={33280}
                 labelFields={"description"}
+                theme={"custom"}
                 // iOS events
                 onDDLListResponseRecords={this._onDDLListResponseRecords.bind(this)}
                 // Android events
