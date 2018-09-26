@@ -15,7 +15,8 @@ export default class UserPortraitScreenlet extends BaseScreenlet {
             male: props.male || true,
             portraitId: props.portraitId || 0,
             uuid: props.uuid || "",
-            editable: props.editable || false
+            editable: props.editable || false,
+            theme: props.theme || ""
         }
     }
     

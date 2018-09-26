@@ -13,7 +13,8 @@ export default class UserPortraitScreenlet extends BaseScreenlet {
         this.screenletAttributes = {
             userId: props.userId || 0,
             borderWidth: props.borderWidth || 1,
-            editable: props.editable || false
+            editable: props.editable || false,
+            theme: props.theme || ""
         }
     }
     render() {

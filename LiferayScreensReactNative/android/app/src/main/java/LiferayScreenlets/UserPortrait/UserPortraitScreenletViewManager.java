@@ -13,6 +13,7 @@ import com.liferay.mobile.screens.userportrait.UserPortraitListener;
 import com.liferay.mobile.screens.userportrait.UserPortraitScreenlet;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 
 public class UserPortraitScreenletViewManager extends SimpleViewManager<UserPortraitScreenlet> implements UserPortraitListener{
 
@@ -36,6 +37,16 @@ public class UserPortraitScreenletViewManager extends SimpleViewManager<UserPort
 
     @ReactProp(name = "screenletAttributes")
     public void setConfiguation(UserPortraitScreenlet screenlet, ReadableMap attributes) {
+        this.screenlet.removeAllViews();
+        String themeName = attributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "userportrait_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.userportrait_default
+                )
+        );
         this.screenlet.setAutoLoad(attributes.getBoolean("autoLoad"));
         this.screenlet.setUserId(attributes.getInt("userId"));
         this.screenlet.setMale(attributes.getBoolean("male"));

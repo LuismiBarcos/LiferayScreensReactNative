@@ -44,10 +44,12 @@ class UserPortraitScreenletView: RCTView, UserPortraitScreenletDelegate {
     let userId = screenletConfiguration["userId"]! as! NSNumber
     let borderWidth = screenletConfiguration["borderWidth"]! as! NSNumber
     let editable = screenletConfiguration["editable"]! as! Bool
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.borderWidth = CGFloat(borderWidth)
     self.screenlet.editable = editable
     self.screenlet.presentingViewController = UIApplication.shared.delegate?.window??.rootViewController
     self.screenlet.load(userId: userId.int64Value)
+    self.screenlet.themeName = theme
   }
   
   // MARK: UserPortraitScreenletDelegate methods

@@ -36,6 +36,7 @@ public class ForgotPasswordViewManager extends SimpleViewManager<ForgotPasswordS
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(ForgotPasswordScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
         String themeName = screenletAttributes.getString("theme");
         this.screenlet.render(
                 ThemesFinder.getLayoutId(
