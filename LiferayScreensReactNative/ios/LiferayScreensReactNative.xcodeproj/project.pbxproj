@@ -99,6 +99,8 @@
 		A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E05684215A92BE001348D0 /* LoginView_custom.xib */; };
 		A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */; };
 		A6E056AF215B75CD001348D0 /* SignUpView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056AE215B75CD001348D0 /* SignUpView_custom.swift */; };
+		A6E056B1215B7C9A001348D0 /* ForgotPasswordView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056B0215B7C9A001348D0 /* ForgotPasswordView_custom.xib */; };
+		A6E056B5215BB8C0001348D0 /* ForgotPasswordView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056B4215BB8C0001348D0 /* ForgotPasswordView_custom.swift */; };
 		A6EAFD82212AFF480072D7C8 /* AssetDisplayScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */; };
 		A6EAFD84212B020F0072D7C8 /* AssetDisplayScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */; };
 		A6EAFD86212B024C0072D7C8 /* AssetDisplayScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */; };
@@ -481,6 +483,8 @@
 		A6E05684215A92BE001348D0 /* LoginView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView_custom.xib; sourceTree = "<group>"; };
 		A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView_custom.xib; sourceTree = "<group>"; };
 		A6E056AE215B75CD001348D0 /* SignUpView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView_custom.swift; sourceTree = "<group>"; };
+		A6E056B0215B7C9A001348D0 /* ForgotPasswordView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordView_custom.xib; sourceTree = "<group>"; };
+		A6E056B4215BB8C0001348D0 /* ForgotPasswordView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView_custom.swift; sourceTree = "<group>"; };
 		A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletView.swift; sourceTree = "<group>"; };
 		A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletManager.swift; sourceTree = "<group>"; };
 		A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetDisplayScreenletModule.m; sourceTree = "<group>"; };
@@ -1003,10 +1007,12 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A6E056B0215B7C9A001348D0 /* ForgotPasswordView_custom.xib */,
 				A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */,
 				A6E05683215A92BE001348D0 /* LoginView_custom.swift */,
 				A6E05684215A92BE001348D0 /* LoginView_custom.xib */,
 				A6E056AE215B75CD001348D0 /* SignUpView_custom.swift */,
+				A6E056B4215BB8C0001348D0 /* ForgotPasswordView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1511,6 +1517,7 @@
 			files = (
 				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				A6E056B1215B7C9A001348D0 /* ForgotPasswordView_custom.xib in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				A678B5F9210B04720008EB10 /* liferay-server-context.plist in Resources */,
 				A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */,
@@ -1657,6 +1664,7 @@
 				A60638F3212C391C00E78951 /* FileDisplayScreenletView.swift in Sources */,
 				A68F8E5421219F770082A85C /* DDLFormScreenletView.swift in Sources */,
 				A6145149211B19EE001335C5 /* CommentListScreenletView.swift in Sources */,
+				A6E056B5215BB8C0001348D0 /* ForgotPasswordView_custom.swift in Sources */,
 				A6051B64212AA9AF00897387 /* PdfDisplayScreenletView.swift in Sources */,
 				A678B5F5210B01900008EB10 /* LoginScreenletView.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,

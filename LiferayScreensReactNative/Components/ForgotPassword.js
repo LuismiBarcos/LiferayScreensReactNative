@@ -11,6 +11,7 @@ export default class ForgotPassword extends Component {
                 style={styles.forgot}
                 anonymousApiUserName={"test@liferay.com"}
                 anonymousApiPassword={"test11"}
+                theme={"custom"}
                 // iOS Events
                 onForgotPasswordSent={this._onForgotPasswordSent}
                 onForgotPasswordError={this._onForgotPasswordError}

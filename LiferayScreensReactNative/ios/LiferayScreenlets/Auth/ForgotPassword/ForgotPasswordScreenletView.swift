@@ -40,8 +40,10 @@ class ForgotPasswordScreenletView: RCTView, ForgotPasswordScreenletDelegate{
   private func setConfiguration(_ screenletConfiguration: NSDictionary) {
     let anonymousApiUserName = screenletConfiguration["anonymousApiUserName"]! as! String
     let anonymousApiPassword = screenletConfiguration["anonymousApiPassword"]! as! String
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.anonymousApiUserName = anonymousApiUserName
     self.screenlet.anonymousApiPassword = anonymousApiPassword
+    self.screenlet.themeName = theme
   }
   
   // MARK: ForgotPasswordScreenletDelegate methods

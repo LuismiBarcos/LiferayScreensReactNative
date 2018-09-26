@@ -200,6 +200,7 @@ export interface SignUpScreenletProps {
      * Name of the theme which you will use
      */
     theme: string;
+
     // COMMON EVENTS
     /**
      * @alias common event
@@ -242,6 +243,12 @@ export interface ForgotPasswordScreenletProps {
      * If the value is set to 0, the company specified in LiferayServerContext is used. 
      */
     companyId: number;
+
+    /**
+     * @description
+     * Name of the theme which you will use
+     */
+    theme: string;
 
     // iOS EVENTS
     /**

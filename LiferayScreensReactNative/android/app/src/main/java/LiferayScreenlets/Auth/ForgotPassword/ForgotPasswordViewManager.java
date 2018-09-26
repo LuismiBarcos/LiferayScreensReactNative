@@ -12,6 +12,8 @@ import com.liferay.mobile.screens.auth.forgotpassword.ForgotPasswordListener;
 import com.liferay.mobile.screens.auth.forgotpassword.ForgotPasswordScreenlet;
 import com.liferay.mobile.screens.context.LiferayServerContext;
 
+import LiferayScreenlets.Base.ThemesFinder;
+
 public class ForgotPasswordViewManager extends SimpleViewManager<ForgotPasswordScreenlet> implements ForgotPasswordListener{
 
     private final String NAME = "ForgotPasswordScreenlet";
@@ -34,6 +36,15 @@ public class ForgotPasswordViewManager extends SimpleViewManager<ForgotPasswordS
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(ForgotPasswordScreenlet screenlet, ReadableMap screenletAttributes) {
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "forgotpassword_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.forgotpassword_default
+                )
+        );
         this.screenlet.setAnonymousApiUserName(screenletAttributes.getString("anonymousApiUserName"));
         this.screenlet.setAnonymousApiPassword(screenletAttributes.getString("anonymousApiPassword"));
         long companyId = screenletAttributes.getInt("companyId") == 0

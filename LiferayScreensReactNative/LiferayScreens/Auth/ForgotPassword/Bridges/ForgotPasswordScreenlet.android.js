@@ -11,7 +11,8 @@ export default class ForgotPasswordScreenlet extends Component {
         this.screenletAttributes = {
             anonymousApiUserName: props.anonymousApiUserName || "",
             anonymousApiPassword: props.anonymousApiPassword || "",
-            companyId: props.companyId || 0
+            companyId: props.companyId || 0,
+            theme: props.theme || ""
         };
     }
     componentWillMount(){
