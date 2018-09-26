@@ -17,7 +17,8 @@ export default class DDLFormScreenlet extends Component {
             repositoryId: props.repositoryId || 0,
             folderId: props.folderId || 0,
             autoLoad: props.autoLoad || true,
-            autoscrollOnValidation: props.autoscrollOnValidation || true
+            autoscrollOnValidation: props.autoscrollOnValidation || true,
+            theme: props.theme || ""
         }
     }
 

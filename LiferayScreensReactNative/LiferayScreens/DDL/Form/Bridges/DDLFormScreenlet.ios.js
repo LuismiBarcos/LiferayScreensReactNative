@@ -18,7 +18,8 @@ export default class DDLFormScreenlet extends Component {
             autoLoad: props.autoLoad || true,
             autoscrollOnValidation: props.autoscrollOnValidation || true,
             showSubmitButton: props.showSubmitButton || true,
-            editable: props.editable || true
+            editable: props.editable || true,
+            theme: props.theme || ""
         }
     }
 

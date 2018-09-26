@@ -56,6 +56,7 @@ class DDLFormScreenletView: RCTView, DDLFormScreenletDelegate {
     let autoscrollOnValidation = screenletConfiguration["autoscrollOnValidation"]! as! Bool
     let showSubmitButton = screenletConfiguration["showSubmitButton"]! as! Bool
     let editable = screenletConfiguration["editable"]! as! Bool
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.structureId = structureId.int64Value
     self.screenlet.groupId = groupId.int64Value
     self.screenlet.recordSetId = recordSetId.int64Value
@@ -66,6 +67,7 @@ class DDLFormScreenletView: RCTView, DDLFormScreenletDelegate {
     self.screenlet.autoscrollOnValidation = autoscrollOnValidation
     self.screenlet.showSubmitButton = showSubmitButton
     self.screenlet.editable = editable
+    self.screenlet.themeName = theme
   }
   
   // MARK: DDLFormScreenletDelegate methods

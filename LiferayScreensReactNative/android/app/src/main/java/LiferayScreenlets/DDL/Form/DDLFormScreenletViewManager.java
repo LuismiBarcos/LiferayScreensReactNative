@@ -20,6 +20,7 @@ import org.json.JSONObject;
 import java.util.Map;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class DDLFormScreenletViewManager extends SimpleViewManager<DDLFormScreenlet> implements DDLFormListener{
@@ -37,29 +38,24 @@ public class DDLFormScreenletViewManager extends SimpleViewManager<DDLFormScreen
     protected DDLFormScreenlet createViewInstance(ThemedReactContext reactContext) {
         this.reactContext = reactContext;
         this.screenlet = new DDLFormScreenlet(reactContext);
-        this.screenlet.render(com.liferay.mobile.screens.R.layout.ddl_form_default);
         this.screenlet.setListener(this);
-        initializeDefaultValues();
         return this.screenlet;
     }
 
-    private void initializeDefaultValues(){
-        DDLFormViewModel viewModel = (DDLFormViewModel) this.screenlet.getChildAt(0);
-        viewModel.setFieldLayoutId(Field.EditorType.CHECKBOX, com.liferay.mobile.screens.R.layout.ddlfield_checkbox_default);
-        viewModel.setFieldLayoutId(Field.EditorType.DATE, com.liferay.mobile.screens.R.layout.ddlfield_date_default);
-        viewModel.setFieldLayoutId(Field.EditorType.NUMBER, com.liferay.mobile.screens.R.layout.ddlfield_number_default);
-        viewModel.setFieldLayoutId(Field.EditorType.INTEGER, com.liferay.mobile.screens.R.layout.ddlfield_number_default);
-        viewModel.setFieldLayoutId(Field.EditorType.DECIMAL, com.liferay.mobile.screens.R.layout.ddlfield_number_default);
-        viewModel.setFieldLayoutId(Field.EditorType.RADIO, com.liferay.mobile.screens.R.layout.ddlfield_radio_default);
-        viewModel.setFieldLayoutId(Field.EditorType.SELECT, com.liferay.mobile.screens.R.layout.ddlfield_select_default);
-        viewModel.setFieldLayoutId(Field.EditorType.TEXT, com.liferay.mobile.screens.R.layout.ddlfield_text_default);
-        viewModel.setFieldLayoutId(Field.EditorType.TEXT_AREA, com.liferay.mobile.screens.R.layout.ddlfield_text_area_default);
-        viewModel.setFieldLayoutId(Field.EditorType.DOCUMENT, com.liferay.mobile.screens.R.layout.ddlfield_document_default);
-        viewModel.setFieldLayoutId(Field.EditorType.GEO, com.liferay.mobile.screens.R.layout.ddlfield_geo_default);
-    }
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(DDLFormScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "ddl_form_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.ddl_form_default
+                )
+        );
+        initializeDefaultValues();
         Record record = new Record(LiferayLocale.getDefaultLocale());
         record.setCreatorUserId(0);
         this.screenlet.setRecord(record);
@@ -78,6 +74,21 @@ public class DDLFormScreenletViewManager extends SimpleViewManager<DDLFormScreen
         if(!this.screenlet.isAutoLoad()) {
             this.screenlet.load();
         }
+    }
+
+    private void initializeDefaultValues(){
+        DDLFormViewModel viewModel = (DDLFormViewModel) this.screenlet.getChildAt(0);
+        viewModel.setFieldLayoutId(Field.EditorType.CHECKBOX, com.liferay.mobile.screens.R.layout.ddlfield_checkbox_default);
+        viewModel.setFieldLayoutId(Field.EditorType.DATE, com.liferay.mobile.screens.R.layout.ddlfield_date_default);
+        viewModel.setFieldLayoutId(Field.EditorType.NUMBER, com.liferay.mobile.screens.R.layout.ddlfield_number_default);
+        viewModel.setFieldLayoutId(Field.EditorType.INTEGER, com.liferay.mobile.screens.R.layout.ddlfield_number_default);
+        viewModel.setFieldLayoutId(Field.EditorType.DECIMAL, com.liferay.mobile.screens.R.layout.ddlfield_number_default);
+        viewModel.setFieldLayoutId(Field.EditorType.RADIO, com.liferay.mobile.screens.R.layout.ddlfield_radio_default);
+        viewModel.setFieldLayoutId(Field.EditorType.SELECT, com.liferay.mobile.screens.R.layout.ddlfield_select_default);
+        viewModel.setFieldLayoutId(Field.EditorType.TEXT, com.liferay.mobile.screens.R.layout.ddlfield_text_default);
+        viewModel.setFieldLayoutId(Field.EditorType.TEXT_AREA, com.liferay.mobile.screens.R.layout.ddlfield_text_area_default);
+        viewModel.setFieldLayoutId(Field.EditorType.DOCUMENT, com.liferay.mobile.screens.R.layout.ddlfield_document_default);
+        viewModel.setFieldLayoutId(Field.EditorType.GEO, com.liferay.mobile.screens.R.layout.ddlfield_geo_default);
     }
 
     // DDLFormListener methods

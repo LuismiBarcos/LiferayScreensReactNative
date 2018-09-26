@@ -11,6 +11,7 @@ export default class  DDLForm extends Component {
                 style={styles.ddl}
                 structureId={54371}
                 recordSetId={54375}
+                theme={"custom"}
                 // iOS event
                 onFormLoaded={this._onFormLoaded}
                 // Android event
@@ -31,7 +32,7 @@ export default class  DDLForm extends Component {
 var {height, width} = Dimensions.get('window');
 const styles = StyleSheet.create({
     ddl: {
-      height: height,
+      height: height - 50,
       width: width
     }
 });
