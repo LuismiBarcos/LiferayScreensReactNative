@@ -15,7 +15,8 @@ export default class CommentListScreenlet extends Component {
             classPK: props.classPK || 0,
             firstPageSize: props.firstPageSize || 50,
             pageSize: props.pageSize || 25,
-            editable: props.editable || true
+            editable: props.editable || true,
+            theme: props.theme || ""
         }
     }
     

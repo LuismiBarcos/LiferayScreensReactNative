@@ -50,12 +50,14 @@ class CommentListScreenletView: RCTView, CommentListScreenletDelegate {
     let refreshControl = screenletConfiguration["refreshControl"]! as! Bool
     let firstPageSize = screenletConfiguration["firstPageSize"]! as! NSNumber
     let pageSize = screenletConfiguration["pageSize"]! as! NSNumber
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.className = className
     self.screenlet.classPK = classPK.int64Value
     self.screenlet.autoLoad = autoLoad
     self.screenlet.refreshControl = refreshControl
     self.screenlet.firstPageSize = firstPageSize.intValue
     self.screenlet.pageSize = pageSize.intValue
+    self.screenlet.themeName = theme
   }
   
   // MARK: CommentListScreenletDelegate methods

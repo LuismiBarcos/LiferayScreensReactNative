@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Locale;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class CommentListScreenletViewManager extends SimpleViewManager<CommentListScreenlet> implements CommentListListener{
@@ -48,6 +49,16 @@ public class CommentListScreenletViewManager extends SimpleViewManager<CommentLi
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(CommentListScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "comment_list_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.comment_list_default
+                )
+        );
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         this.screenlet.setClassName(screenletAttributes.getString("className"));
         this.screenlet.setClassPK(screenletAttributes.getInt("classPK"));
