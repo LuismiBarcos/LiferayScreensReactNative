@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Themes.ImageDisplayViewCustom
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ProgressBar
+        android:id="@+id/liferay_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        />
+
+    <ImageView
+        android:id="@+id/liferay_image_asset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:background="#000000"
+        android:contentDescription="@string/asset_image"
+        />
+
+</Themes.ImageDisplayViewCustom>

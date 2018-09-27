@@ -13,6 +13,7 @@ export default class ImageDisplayScreenlet extends Component {
             entryId: props.entryId || 0,
             className: props.className || "",
             classPK: props.classPK || 0,
+            theme: props.theme || ""
         }
     }
 

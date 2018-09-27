@@ -13,6 +13,7 @@ import com.liferay.mobile.screens.dlfile.display.image.ImageDisplayScreenlet;
 import org.json.JSONObject;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 
 public class ImageDisplayScreenletViewManager extends SimpleViewManager<ImageDisplayScreenlet> implements AssetDisplayListener{
 
@@ -36,6 +37,16 @@ public class ImageDisplayScreenletViewManager extends SimpleViewManager<ImageDis
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(ImageDisplayScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "image_display_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.image_display_default
+                )
+        );
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         this.screenlet.setEntryId(screenletAttributes.getInt("entryId"));
         this.screenlet.setClassName(screenletAttributes.getString("className"));

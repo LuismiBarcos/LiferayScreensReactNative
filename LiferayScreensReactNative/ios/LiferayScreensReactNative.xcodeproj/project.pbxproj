@@ -113,6 +113,8 @@
 		A6E056C9215BEE2F001348D0 /* WebContentDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056C8215BEE2F001348D0 /* WebContentDisplayView_custom.swift */; };
 		A6E056CB215CDD64001348D0 /* WebContentListView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056CA215CDD64001348D0 /* WebContentListView_custom.xib */; };
 		A6E056CD215CDD81001348D0 /* WebContentListView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056CC215CDD81001348D0 /* WebContentListView_custom.swift */; };
+		A6E056CF215CEEEF001348D0 /* ImageDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056CE215CEEEF001348D0 /* ImageDisplayView_custom.xib */; };
+		A6E056D1215CEF0B001348D0 /* ImageDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056D0215CEF0A001348D0 /* ImageDisplayView_custom.swift */; };
 		A6EAFD82212AFF480072D7C8 /* AssetDisplayScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */; };
 		A6EAFD84212B020F0072D7C8 /* AssetDisplayScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */; };
 		A6EAFD86212B024C0072D7C8 /* AssetDisplayScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */; };
@@ -509,6 +511,8 @@
 		A6E056C8215BEE2F001348D0 /* WebContentDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentDisplayView_custom.swift; sourceTree = "<group>"; };
 		A6E056CA215CDD64001348D0 /* WebContentListView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebContentListView_custom.xib; sourceTree = "<group>"; };
 		A6E056CC215CDD81001348D0 /* WebContentListView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentListView_custom.swift; sourceTree = "<group>"; };
+		A6E056CE215CEEEF001348D0 /* ImageDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageDisplayView_custom.xib; sourceTree = "<group>"; };
+		A6E056D0215CEF0A001348D0 /* ImageDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayView_custom.swift; sourceTree = "<group>"; };
 		A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletView.swift; sourceTree = "<group>"; };
 		A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletManager.swift; sourceTree = "<group>"; };
 		A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetDisplayScreenletModule.m; sourceTree = "<group>"; };
@@ -1031,6 +1035,7 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A6E056CE215CEEEF001348D0 /* ImageDisplayView_custom.xib */,
 				A6E056CA215CDD64001348D0 /* WebContentListView_custom.xib */,
 				A6E056C6215BEE11001348D0 /* WebContentDisplayView_custom.xib */,
 				A6E056C2215BE780001348D0 /* AssetListView_custom.xib */,
@@ -1049,6 +1054,7 @@
 				A6E056C4215BE7A6001348D0 /* AssetListView_custom.swift */,
 				A6E056C8215BEE2F001348D0 /* WebContentDisplayView_custom.swift */,
 				A6E056CC215CDD81001348D0 /* WebContentListView_custom.swift */,
+				A6E056D0215CEF0A001348D0 /* ImageDisplayView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1553,6 +1559,7 @@
 			files = (
 				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
 				A6E056C3215BE780001348D0 /* AssetListView_custom.xib in Resources */,
+				A6E056CF215CEEEF001348D0 /* ImageDisplayView_custom.xib in Resources */,
 				A6E056B7215BC03B001348D0 /* UserPortraitView_custom.xib in Resources */,
 				A6E056BF215BD623001348D0 /* DDLListView_custom.xib in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
@@ -1694,6 +1701,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A614515521217AAA001335C5 /* RatingScreenletManager.swift in Sources */,
+				A6E056D1215CEF0B001348D0 /* ImageDisplayView_custom.swift in Sources */,
 				A6EAFD92212C076E0072D7C8 /* BlogsEntryDisplayScreenletManager.swift in Sources */,
 				A6051B0F21258D1800897387 /* CommentDisplayScreenletModule.m in Sources */,
 				A6051B6D212AE69300897387 /* AssetListScreenletManager.swift in Sources */,
