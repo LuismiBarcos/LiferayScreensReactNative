@@ -123,7 +123,9 @@
 		A6E056DE215D20F5001348D0 /* like_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E056DC215D20F5001348D0 /* like_enabled.png */; };
 		A6E056E0215D2C4D001348D0 /* CommentListView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056DF215D2C4D001348D0 /* CommentListView_custom.xib */; };
 		A6E056E2215D2C6D001348D0 /* CommentListView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056E1215D2C6D001348D0 /* CommentListView_custom.swift */; };
-		A6E056E4215D318E001348D0 /* CommentDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056E3215D318D001348D0 /* CommentDisplayView_custom.xib */; };
+		A6E056E8215D3AFA001348D0 /* CommentDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056E7215D3AF9001348D0 /* CommentDisplayView_custom.xib */; };
+		A6E056EE215D3C5B001348D0 /* CommentAddView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056ED215D3C5B001348D0 /* CommentAddView_custom.xib */; };
+		A6E056F0215D3C82001348D0 /* CommentAddView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056EF215D3C82001348D0 /* CommentAddView_custom.swift */; };
 		A6EAFD82212AFF480072D7C8 /* AssetDisplayScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */; };
 		A6EAFD84212B020F0072D7C8 /* AssetDisplayScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */; };
 		A6EAFD86212B024C0072D7C8 /* AssetDisplayScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */; };
@@ -530,7 +532,9 @@
 		A6E056DC215D20F5001348D0 /* like_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_enabled.png; sourceTree = "<group>"; };
 		A6E056DF215D2C4D001348D0 /* CommentListView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentListView_custom.xib; sourceTree = "<group>"; };
 		A6E056E1215D2C6D001348D0 /* CommentListView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView_custom.swift; sourceTree = "<group>"; };
-		A6E056E3215D318D001348D0 /* CommentDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentDisplayView_custom.xib; sourceTree = "<group>"; };
+		A6E056E7215D3AF9001348D0 /* CommentDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentDisplayView_custom.xib; sourceTree = "<group>"; };
+		A6E056ED215D3C5B001348D0 /* CommentAddView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentAddView_custom.xib; sourceTree = "<group>"; };
+		A6E056EF215D3C82001348D0 /* CommentAddView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAddView_custom.swift; sourceTree = "<group>"; };
 		A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletView.swift; sourceTree = "<group>"; };
 		A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletManager.swift; sourceTree = "<group>"; };
 		A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetDisplayScreenletModule.m; sourceTree = "<group>"; };
@@ -1054,7 +1058,8 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
-				A6E056E3215D318D001348D0 /* CommentDisplayView_custom.xib */,
+				A6E056ED215D3C5B001348D0 /* CommentAddView_custom.xib */,
+				A6E056E7215D3AF9001348D0 /* CommentDisplayView_custom.xib */,
 				A6E056DF215D2C4D001348D0 /* CommentListView_custom.xib */,
 				A6E056D7215D2095001348D0 /* RatingView_custom.swift */,
 				A6E056D6215D2094001348D0 /* RatingView_custom.xib */,
@@ -1081,6 +1086,7 @@
 				A6E056D0215CEF0A001348D0 /* ImageDisplayView_custom.swift */,
 				A6E056D4215D12DC001348D0 /* ImageGalleryView_custom.swift */,
 				A6E056E1215D2C6D001348D0 /* CommentListView_custom.swift */,
+				A6E056EF215D3C82001348D0 /* CommentAddView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1594,8 +1600,8 @@
 			files = (
 				A6E056DD215D20F5001348D0 /* like_disabled.png in Resources */,
 				A6E056D8215D2096001348D0 /* RatingView_custom.xib in Resources */,
-				A6E056E4215D318E001348D0 /* CommentDisplayView_custom.xib in Resources */,
 				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
+				A6E056E8215D3AFA001348D0 /* CommentDisplayView_custom.xib in Resources */,
 				A6E056C3215BE780001348D0 /* AssetListView_custom.xib in Resources */,
 				A6E056CF215CEEEF001348D0 /* ImageDisplayView_custom.xib in Resources */,
 				A6E056D3215D12C5001348D0 /* ImageGalleryView_custom.xib in Resources */,
@@ -1606,6 +1612,7 @@
 				A6E056B1215B7C9A001348D0 /* ForgotPasswordView_custom.xib in Resources */,
 				A6E056C7215BEE12001348D0 /* WebContentDisplayView_custom.xib in Resources */,
 				A6E056CB215CDD64001348D0 /* WebContentListView_custom.xib in Resources */,
+				A6E056EE215D3C5B001348D0 /* CommentAddView_custom.xib in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				A678B5F9210B04720008EB10 /* liferay-server-context.plist in Resources */,
 				A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */,
@@ -1746,6 +1753,7 @@
 				A6EAFD92212C076E0072D7C8 /* BlogsEntryDisplayScreenletManager.swift in Sources */,
 				A6051B0F21258D1800897387 /* CommentDisplayScreenletModule.m in Sources */,
 				A6051B6D212AE69300897387 /* AssetListScreenletManager.swift in Sources */,
+				A6E056F0215D3C82001348D0 /* CommentAddView_custom.swift in Sources */,
 				A678B60D210F03760008EB10 /* ImageGalleryScreenletManager.swift in Sources */,
 				A68F8E5621219F8B0082A85C /* DDLFormScreenletModule.m in Sources */,
 				A614515C21218A9A001335C5 /* ForgotPasswordScreenletManager.swift in Sources */,

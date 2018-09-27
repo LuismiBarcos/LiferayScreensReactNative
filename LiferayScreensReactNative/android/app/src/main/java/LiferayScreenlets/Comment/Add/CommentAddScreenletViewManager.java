@@ -13,6 +13,7 @@ import com.liferay.mobile.screens.comment.add.CommentAddScreenlet;
 import org.json.JSONObject;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 
 public class CommentAddScreenletViewManager extends SimpleViewManager<CommentAddScreenlet> implements CommentAddListener{
 
@@ -36,6 +37,16 @@ public class CommentAddScreenletViewManager extends SimpleViewManager<CommentAdd
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(CommentAddScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "comment_add_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.comment_add_default
+                )
+        );
         this.screenlet.setClassName(screenletAttributes.getString("className"));
         this.screenlet.setClassPK(screenletAttributes.getInt("classPK"));
     }

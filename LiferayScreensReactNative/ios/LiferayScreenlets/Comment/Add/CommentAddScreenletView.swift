@@ -42,8 +42,10 @@ class CommentAddScreenletView: RCTView, CommentAddScreenletDelegate {
   private func setConfiguration(_ screenletConfiguration: NSDictionary) {
     let className = screenletConfiguration["className"]! as! String
     let classPK = screenletConfiguration["classPK"]! as! NSNumber
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.className = className
     self.screenlet.classPK = classPK.int64Value
+    self.screenlet.themeName = theme
   }
   
   // MARK: CommentAddScreenletDelegate methods

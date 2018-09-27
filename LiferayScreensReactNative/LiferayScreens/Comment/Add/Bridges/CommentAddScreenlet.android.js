@@ -11,6 +11,7 @@ export default class CommentAddScreenlet extends Component {
         this.screenletAttributes = {
             className: props.className || "",
             classPK: props.classPK || 0,
+            theme: props.theme || ""
         }
     }
 
