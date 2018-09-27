@@ -10,7 +10,8 @@ export default class CommentDisplayScreenlet extends Component {
         this.screenletAttributes = {
             commentId: props.commentId || 0,
             autoLoad: props.autoLoad || true,
-            editable: props.editable || true
+            editable: props.editable || true,
+            theme: props.theme || ""
         }
     }
     render(){

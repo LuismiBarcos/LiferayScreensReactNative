@@ -1458,6 +1458,12 @@ export interface CommentDisplayScreenletProps {
      */
     editable: boolean;
 
+    /**
+     * @description
+     * Name of the theme which you will use
+     */
+    theme: string;
+
     // iOS EVENTS
     /**
      * @alias only ios event

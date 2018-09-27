@@ -45,9 +45,11 @@ class CommentDisplayScreenletView: RCTView, CommentDisplayScreenletDelegate {
     let commentId = screenletConfiguration["commentId"]! as! NSNumber
     let autoLoad = screenletConfiguration["autoLoad"]! as! Bool
     let editable = screenletConfiguration["editable"]! as! Bool
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.commentId = commentId.int64Value
     self.screenlet.autoLoad = autoLoad
     self.screenlet.editable = editable
+    self.screenlet.themeName = theme
   }
   
   // MARK: CommentDisplayScreenletDelegate methods
