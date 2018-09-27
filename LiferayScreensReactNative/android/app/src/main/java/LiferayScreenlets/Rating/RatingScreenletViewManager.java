@@ -12,6 +12,7 @@ import com.liferay.mobile.screens.rating.RatingListener;
 import com.liferay.mobile.screens.rating.RatingScreenlet;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class RatingScreenletViewManager extends SimpleViewManager<RatingScreenlet> implements RatingListener{
@@ -37,6 +38,16 @@ public class RatingScreenletViewManager extends SimpleViewManager<RatingScreenle
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(RatingScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "rating_like_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.rating_like_default
+                )
+        );
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         this.screenlet.enableEdition(screenletAttributes.getBoolean("editable"));
         this.screenlet.setEntryId(screenletAttributes.getInt("entryId"));

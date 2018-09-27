@@ -15,7 +15,8 @@ export default class RatingScreenlet extends Component {
             entryId: props.entryId || 0,
             className: props.className || "",
             classPK: props.classPK || 0,
-            groupId: props.groupId || 0
+            groupId: props.groupId || 0,
+            theme: props.theme || ""
         }
     }
     

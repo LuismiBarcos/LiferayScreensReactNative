@@ -45,11 +45,13 @@ class RatingScreenletView: RCTView, RatingScreenletDelegate {
     let entryId = screenletConfiguration["entryId"]! as! NSNumber
     let className = screenletConfiguration["className"]! as! String
     let classPK = screenletConfiguration["classPK"]! as! NSNumber
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.autoLoad = autoLoad
     self.screenlet.editable = editable
     self.screenlet.entryId = entryId.int64Value
     self.screenlet.className = className
     self.screenlet.classPK = classPK.int64Value
+    self.screenlet.themeName = theme
   }
   
   // MARK: RatingScreenletDelegate methods

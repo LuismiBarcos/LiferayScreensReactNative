@@ -13,7 +13,8 @@ export default class RatingScreenlet extends Component {
             editable: props.editable || true,
             entryId: props.entryId || 0,
             className: props.className || "",
-            classPK: props.classPK || 0
+            classPK: props.classPK || 0,
+            theme: props.theme || ""
         }
     }
 

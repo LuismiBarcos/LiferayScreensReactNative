@@ -117,6 +117,10 @@
 		A6E056D1215CEF0B001348D0 /* ImageDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056D0215CEF0A001348D0 /* ImageDisplayView_custom.swift */; };
 		A6E056D3215D12C5001348D0 /* ImageGalleryView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056D2215D12C4001348D0 /* ImageGalleryView_custom.xib */; };
 		A6E056D5215D12DC001348D0 /* ImageGalleryView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056D4215D12DC001348D0 /* ImageGalleryView_custom.swift */; };
+		A6E056D8215D2096001348D0 /* RatingView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056D6215D2094001348D0 /* RatingView_custom.xib */; };
+		A6E056D9215D2096001348D0 /* RatingView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E056D7215D2095001348D0 /* RatingView_custom.swift */; };
+		A6E056DD215D20F5001348D0 /* like_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E056DB215D20F5001348D0 /* like_disabled.png */; };
+		A6E056DE215D20F5001348D0 /* like_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E056DC215D20F5001348D0 /* like_enabled.png */; };
 		A6EAFD82212AFF480072D7C8 /* AssetDisplayScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */; };
 		A6EAFD84212B020F0072D7C8 /* AssetDisplayScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */; };
 		A6EAFD86212B024C0072D7C8 /* AssetDisplayScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */; };
@@ -517,6 +521,10 @@
 		A6E056D0215CEF0A001348D0 /* ImageDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayView_custom.swift; sourceTree = "<group>"; };
 		A6E056D2215D12C4001348D0 /* ImageGalleryView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGalleryView_custom.xib; sourceTree = "<group>"; };
 		A6E056D4215D12DC001348D0 /* ImageGalleryView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryView_custom.swift; sourceTree = "<group>"; };
+		A6E056D6215D2094001348D0 /* RatingView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingView_custom.xib; sourceTree = "<group>"; };
+		A6E056D7215D2095001348D0 /* RatingView_custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView_custom.swift; sourceTree = "<group>"; };
+		A6E056DB215D20F5001348D0 /* like_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_disabled.png; sourceTree = "<group>"; };
+		A6E056DC215D20F5001348D0 /* like_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_enabled.png; sourceTree = "<group>"; };
 		A6EAFD81212AFF480072D7C8 /* AssetDisplayScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletView.swift; sourceTree = "<group>"; };
 		A6EAFD83212B020F0072D7C8 /* AssetDisplayScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayScreenletManager.swift; sourceTree = "<group>"; };
 		A6EAFD85212B024C0072D7C8 /* AssetDisplayScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetDisplayScreenletModule.m; sourceTree = "<group>"; };
@@ -774,6 +782,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A6E056DA215D20DF001348D0 /* Resources */,
 				A6E05682215A92BE001348D0 /* Custom themes */,
 				A678B5C9210B01180008EB10 /* LiferayScreenlets */,
 				13B07FAE1A68108700A75B9A /* LiferayScreensReactNative */,
@@ -1039,6 +1048,8 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A6E056D7215D2095001348D0 /* RatingView_custom.swift */,
+				A6E056D6215D2094001348D0 /* RatingView_custom.xib */,
 				A6E056D2215D12C4001348D0 /* ImageGalleryView_custom.xib */,
 				A6E056CE215CEEEF001348D0 /* ImageDisplayView_custom.xib */,
 				A6E056CA215CDD64001348D0 /* WebContentListView_custom.xib */,
@@ -1063,6 +1074,15 @@
 				A6E056D4215D12DC001348D0 /* ImageGalleryView_custom.swift */,
 			);
 			path = "Custom themes";
+			sourceTree = "<group>";
+		};
+		A6E056DA215D20DF001348D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A6E056DB215D20F5001348D0 /* like_disabled.png */,
+				A6E056DC215D20F5001348D0 /* like_enabled.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A6EAFD5B212AFF2B0072D7C8 /* Display */ = {
@@ -1563,10 +1583,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E056DD215D20F5001348D0 /* like_disabled.png in Resources */,
+				A6E056D8215D2096001348D0 /* RatingView_custom.xib in Resources */,
 				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
 				A6E056C3215BE780001348D0 /* AssetListView_custom.xib in Resources */,
 				A6E056CF215CEEEF001348D0 /* ImageDisplayView_custom.xib in Resources */,
 				A6E056D3215D12C5001348D0 /* ImageGalleryView_custom.xib in Resources */,
+				A6E056DE215D20F5001348D0 /* like_enabled.png in Resources */,
 				A6E056B7215BC03B001348D0 /* UserPortraitView_custom.xib in Resources */,
 				A6E056BF215BD623001348D0 /* DDLListView_custom.xib in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
@@ -1756,6 +1779,7 @@
 				A63B0E2C21258A3E003000F9 /* CommentDisplayScreenletView.swift in Sources */,
 				A6EAFD86212B024C0072D7C8 /* AssetDisplayScreenletModule.m in Sources */,
 				A6E056D5215D12DC001348D0 /* ImageGalleryView_custom.swift in Sources */,
+				A6E056D9215D2096001348D0 /* RatingView_custom.swift in Sources */,
 				A678B611210F09850008EB10 /* ImageGalleryScreenletModule.m in Sources */,
 				A614515E21218AD9001335C5 /* ForgotPasswordScreenletView.swift in Sources */,
 				A6EAFD82212AFF480072D7C8 /* AssetDisplayScreenletView.swift in Sources */,
