@@ -14,7 +14,8 @@ export default class ImageGalleryScreenlet extends Component {
             folderId: props.folderId || 0,
             autoLoad: props.autoLoad || true,
             firstPageSize: props.firstPageSize || 50,
-            pageSize: props.pageSize || 25
+            pageSize: props.pageSize || 25,
+            theme: props.theme || ""
         }
     }
     

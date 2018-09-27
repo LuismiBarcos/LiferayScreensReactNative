@@ -1041,6 +1041,12 @@ export interface ImageGalleryScreenletProps {
      */
     pageSize: number;
 
+    /**
+     * @description
+     * Name of the theme which you will use
+     */
+    theme: string;
+
     // COMMON EVENTS
     /**
      * @alias common event

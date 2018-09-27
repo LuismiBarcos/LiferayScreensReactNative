@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Locale;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class ImageGalleryScreenletViewManager extends SimpleViewManager<ImageGalleryScreenlet> implements ImageGalleryListener{
@@ -48,6 +49,16 @@ public class ImageGalleryScreenletViewManager extends SimpleViewManager<ImageGal
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(ImageGalleryScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "gallery_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.gallery_default
+                )
+        );
         this.screenlet.setRepositoryId(screenletAttributes.getInt("repositoryId"));
         this.screenlet.setFolderId(screenletAttributes.getInt("folderId"));
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));

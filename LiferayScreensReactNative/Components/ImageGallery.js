@@ -12,6 +12,7 @@ export default class ImageGallery extends Component {
                     style={styles.gallery}
                     folderId={72155}
                     repositoryId={20143}
+                    theme={"custom"}
                     // common events
                     onItemSelected={this._onItemSelected}
                     // iOS events
