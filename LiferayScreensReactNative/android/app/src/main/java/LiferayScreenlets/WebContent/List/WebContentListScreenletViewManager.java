@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Locale;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class WebContentListScreenletViewManager extends SimpleViewManager<WebContentListScreenlet> implements BaseListListener {
@@ -43,6 +44,16 @@ public class WebContentListScreenletViewManager extends SimpleViewManager<WebCon
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(WebContentListScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "webcontentlist_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.webcontentlist_default
+                )
+        );
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         this.screenlet.setFolderId(screenletAttributes.getInt("folderId"));
         long groupId = screenletAttributes.getInt("groupId") == 0

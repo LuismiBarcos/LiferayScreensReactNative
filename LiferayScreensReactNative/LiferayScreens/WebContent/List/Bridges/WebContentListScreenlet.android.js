@@ -14,7 +14,8 @@ export default class WebContentListScreenlet extends Component {
             groupId: props.groupId || 0,
             labelFields: props.labelFields || "",
             firstPageSize: props.firstPageSize || 50,
-            pageSize: props.pageSize || 25
+            pageSize: props.pageSize || 25,
+            theme: props.theme || ""
         }
     }
 

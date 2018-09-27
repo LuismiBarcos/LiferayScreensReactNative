@@ -13,7 +13,8 @@ export default class WebContentListScreenlet extends Component {
             autoLoad: props.autoLoad || true,
             refreshControl: props.refreshControl || true,
             firstPageSize: props.firstPageSize || 50,
-            pageSize: props.pageSize || 25
+            pageSize: props.pageSize || 25,
+            theme: props.theme || ""
         }
     }
     render() {

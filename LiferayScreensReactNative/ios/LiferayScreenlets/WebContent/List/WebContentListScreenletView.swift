@@ -46,12 +46,14 @@ class WebContentListScreenletView: RCTView, WebContentListScreenletDelegate {
     let refreshControl = screenletConfiguration["refreshControl"]! as! Bool
     let firstPageSize = screenletConfiguration["firstPageSize"]! as! NSNumber
     let pageSize = screenletConfiguration["pageSize"]! as! NSNumber
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.groupId = groupId.int64Value
     self.screenlet.folderId = folderId.int64Value
     self.screenlet.autoLoad = autoLoad
     self.screenlet.refreshControl = refreshControl
     self.screenlet.firstPageSize = firstPageSize.intValue
     self.screenlet.pageSize = pageSize.intValue
+    self.screenlet.themeName = theme
   }
   
   // MARK: WebContentListScreenletDelegate methods
