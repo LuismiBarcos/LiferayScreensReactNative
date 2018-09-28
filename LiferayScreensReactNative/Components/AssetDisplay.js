@@ -1,6 +1,6 @@
 'use strict'
 import React, {Component} from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 import { AssetDisplayScreenlet } from "./../LiferayScreens";
 
@@ -12,6 +12,7 @@ export default class AssetDisplay extends Component {
                 style={styles.asset}
                 className={"com.liferay.blogs.kernel.model.BlogsEntry"}
                 classPK={40515}
+                theme={"custom"}
                 // iOS Events
                 onAssetResponse={this._onAssetResponse}
                 // Android Events
@@ -28,10 +29,10 @@ export default class AssetDisplay extends Component {
         console.log('USUARIO --> _onRetrieveAssetSuccess ', assetEntry);
     }
 }
-
+var { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
     asset: {
-      height: 350,
-      width: 400
+      height: height,
+      width: width
     }
 });

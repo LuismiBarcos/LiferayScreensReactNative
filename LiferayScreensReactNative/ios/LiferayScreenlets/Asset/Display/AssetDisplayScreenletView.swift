@@ -45,11 +45,13 @@ class AssetDisplayScreenletView: RCTView, AssetDisplayScreenletDelegate {
     let classPK = screenletConfiguration["classPK"]! as! NSNumber
     let portletItemName = screenletConfiguration["portletItemName"]! as! String
     let autoLoad = screenletConfiguration["autoLoad"]! as! Bool
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.assetEntryId = assetEntryId.int64Value
     self.screenlet.className = className
     self.screenlet.classPK = classPK.int64Value
     self.screenlet.portletItemName = portletItemName
     self.screenlet.autoLoad = autoLoad
+    self.screenlet.themeName = theme
   }
   
   // MARK: AssetDisplayScreenletDelegate methods

@@ -57,6 +57,8 @@
 		A606392921300B5800E78951 /* RCTViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A606392821300B5800E78951 /* RCTViewExtension.swift */; };
 		A60D405A210F35E500AB71D6 /* SessionContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D4059210F35E500AB71D6 /* SessionContextManager.swift */; };
 		A60D405C210F386800AB71D6 /* SessionContextModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A60D405B210F386800AB71D6 /* SessionContextModule.m */; };
+		A611B9B3215E14B0008C3AF7 /* AssetDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A611B98D215E14AF008C3AF7 /* AssetDisplayView_custom.xib */; };
+		A611B9B5215E14D0008C3AF7 /* AssetDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A611B9B4215E14D0008C3AF7 /* AssetDisplayView_custom.swift */; };
 		A6145147211B19AF001335C5 /* CommentListScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6145146211B19AF001335C5 /* CommentListScreenletManager.swift */; };
 		A6145149211B19EE001335C5 /* CommentListScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6145148211B19EE001335C5 /* CommentListScreenletView.swift */; };
 		A614514B211B1FAE001335C5 /* CommentListScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A614514A211B1FAE001335C5 /* CommentListScreenletModule.m */; };
@@ -465,6 +467,8 @@
 		A606392821300B5800E78951 /* RCTViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTViewExtension.swift; sourceTree = "<group>"; };
 		A60D4059210F35E500AB71D6 /* SessionContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionContextManager.swift; sourceTree = "<group>"; };
 		A60D405B210F386800AB71D6 /* SessionContextModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionContextModule.m; sourceTree = "<group>"; };
+		A611B98D215E14AF008C3AF7 /* AssetDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssetDisplayView_custom.xib; sourceTree = "<group>"; };
+		A611B9B4215E14D0008C3AF7 /* AssetDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDisplayView_custom.swift; sourceTree = "<group>"; };
 		A6145146211B19AF001335C5 /* CommentListScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListScreenletManager.swift; sourceTree = "<group>"; };
 		A6145148211B19EE001335C5 /* CommentListScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListScreenletView.swift; sourceTree = "<group>"; };
 		A614514A211B1FAE001335C5 /* CommentListScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentListScreenletModule.m; sourceTree = "<group>"; };
@@ -1058,6 +1062,7 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A611B98D215E14AF008C3AF7 /* AssetDisplayView_custom.xib */,
 				A6E056ED215D3C5B001348D0 /* CommentAddView_custom.xib */,
 				A6E056E7215D3AF9001348D0 /* CommentDisplayView_custom.xib */,
 				A6E056DF215D2C4D001348D0 /* CommentListView_custom.xib */,
@@ -1087,6 +1092,7 @@
 				A6E056D4215D12DC001348D0 /* ImageGalleryView_custom.swift */,
 				A6E056E1215D2C6D001348D0 /* CommentListView_custom.swift */,
 				A6E056EF215D3C82001348D0 /* CommentAddView_custom.swift */,
+				A611B9B4215E14D0008C3AF7 /* AssetDisplayView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1598,6 +1604,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A611B9B3215E14B0008C3AF7 /* AssetDisplayView_custom.xib in Resources */,
 				A6E056DD215D20F5001348D0 /* like_disabled.png in Resources */,
 				A6E056D8215D2096001348D0 /* RatingView_custom.xib in Resources */,
 				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
@@ -1769,6 +1776,7 @@
 				A678B5F5210B01900008EB10 /* LoginScreenletView.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				A6EAFD99212C1E080072D7C8 /* DDLListScreenletManager.swift in Sources */,
+				A611B9B5215E14D0008C3AF7 /* AssetDisplayView_custom.swift in Sources */,
 				A678B5F3210B01650008EB10 /* LoginScreenletManager.swift in Sources */,
 				A6E056B9215BC059001348D0 /* UserPortraitView_custom.swift in Sources */,
 				A678B608210B2D550008EB10 /* UserPortraitScreenletView.swift in Sources */,

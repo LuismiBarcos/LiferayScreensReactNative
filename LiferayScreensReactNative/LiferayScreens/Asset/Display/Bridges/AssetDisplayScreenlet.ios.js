@@ -12,7 +12,8 @@ export default class AssetDisplayScreenlet extends Component {
             className: props.className || "",
             classPK: props.classPK || 0,
             portletItemName: props.portletItemName || "",
-            autoLoad: props.autoLoad || true
+            autoLoad: props.autoLoad || true,
+            theme: props.theme || ""
         }
     }
     render() {
