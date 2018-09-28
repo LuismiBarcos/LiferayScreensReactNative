@@ -85,6 +85,8 @@
 		A63B0E2C21258A3E003000F9 /* CommentDisplayScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63B0E2B21258A3E003000F9 /* CommentDisplayScreenletView.swift */; };
 		A63C9B00215E36B900A9BB4E /* PdfDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63C9ADA215E36B800A9BB4E /* PdfDisplayView_custom.xib */; };
 		A63C9B02215E36DB00A9BB4E /* PdfDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C9B01215E36DB00A9BB4E /* PdfDisplayView_custom.swift */; };
+		A63C9B04215E3AFB00A9BB4E /* FileDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63C9B03215E3AFB00A9BB4E /* FileDisplayView_custom.xib */; };
+		A63C9B06215E3B1000A9BB4E /* FileDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C9B05215E3B1000A9BB4E /* FileDisplayView_custom.swift */; };
 		A678B5F3210B01650008EB10 /* LoginScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678B5F2210B01650008EB10 /* LoginScreenletManager.swift */; };
 		A678B5F5210B01900008EB10 /* LoginScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A678B5F4210B01900008EB10 /* LoginScreenletView.swift */; };
 		A678B5F7210B01DF0008EB10 /* LoginScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A678B5F6210B01DF0008EB10 /* LoginScreenletModule.m */; };
@@ -502,6 +504,8 @@
 		A63B0E2B21258A3E003000F9 /* CommentDisplayScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDisplayScreenletView.swift; sourceTree = "<group>"; };
 		A63C9ADA215E36B800A9BB4E /* PdfDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PdfDisplayView_custom.xib; sourceTree = "<group>"; };
 		A63C9B01215E36DB00A9BB4E /* PdfDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfDisplayView_custom.swift; sourceTree = "<group>"; };
+		A63C9B03215E3AFB00A9BB4E /* FileDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileDisplayView_custom.xib; sourceTree = "<group>"; };
+		A63C9B05215E3B1000A9BB4E /* FileDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDisplayView_custom.swift; sourceTree = "<group>"; };
 		A678B5F1210B01640008EB10 /* LiferayScreensReactNative-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiferayScreensReactNative-Bridging-Header.h"; sourceTree = "<group>"; };
 		A678B5F2210B01650008EB10 /* LoginScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenletManager.swift; sourceTree = "<group>"; };
 		A678B5F4210B01900008EB10 /* LoginScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenletView.swift; sourceTree = "<group>"; };
@@ -1076,6 +1080,7 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A63C9B03215E3AFB00A9BB4E /* FileDisplayView_custom.xib */,
 				A63C9ADA215E36B800A9BB4E /* PdfDisplayView_custom.xib */,
 				A6B43C2F215E297500E3DA3D /* AudioDisplayView_custom.xib */,
 				A6B43C2B215E223F00E3DA3D /* VideoDisplayView_custom.xib */,
@@ -1114,6 +1119,7 @@
 				A6B43C2D215E225C00E3DA3D /* VideoDisplayView_custom.swift */,
 				A6B43C31215E299500E3DA3D /* AudioDisplayView_custom.swift */,
 				A63C9B01215E36DB00A9BB4E /* PdfDisplayView_custom.swift */,
+				A63C9B05215E3B1000A9BB4E /* FileDisplayView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1628,6 +1634,7 @@
 				A611B9B3215E14B0008C3AF7 /* AssetDisplayView_custom.xib in Resources */,
 				A6E056DD215D20F5001348D0 /* like_disabled.png in Resources */,
 				A6B43C28215E1ECB00E3DA3D /* BlogsEntryDisplayView_custom.xib in Resources */,
+				A63C9B04215E3AFB00A9BB4E /* FileDisplayView_custom.xib in Resources */,
 				A6E056D8215D2096001348D0 /* RatingView_custom.xib in Resources */,
 				A6B43C30215E297500E3DA3D /* AudioDisplayView_custom.xib in Resources */,
 				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
@@ -1780,6 +1787,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A63C9B06215E3B1000A9BB4E /* FileDisplayView_custom.swift in Sources */,
 				A614515521217AAA001335C5 /* RatingScreenletManager.swift in Sources */,
 				A6E056D1215CEF0B001348D0 /* ImageDisplayView_custom.swift in Sources */,
 				A6EAFD92212C076E0072D7C8 /* BlogsEntryDisplayScreenletManager.swift in Sources */,
