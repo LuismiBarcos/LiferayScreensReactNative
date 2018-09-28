@@ -2031,6 +2031,12 @@ export interface AudioDisplayScreenletProps {
      */
     entryId: number;
 
+    /**
+     * @description
+     * Name of the theme which you will use
+     */
+    theme: string;
+
     // iOS EVENTS
     /**
      * @alias only ios event

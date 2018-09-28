@@ -100,6 +100,8 @@
 		A6B43C28215E1ECB00E3DA3D /* BlogsEntryDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */; };
 		A6B43C2C215E223F00E3DA3D /* VideoDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B43C2B215E223F00E3DA3D /* VideoDisplayView_custom.xib */; };
 		A6B43C2E215E225C00E3DA3D /* VideoDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B43C2D215E225C00E3DA3D /* VideoDisplayView_custom.swift */; };
+		A6B43C30215E297500E3DA3D /* AudioDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B43C2F215E297500E3DA3D /* AudioDisplayView_custom.xib */; };
+		A6B43C32215E299500E3DA3D /* AudioDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B43C31215E299500E3DA3D /* AudioDisplayView_custom.swift */; };
 		A6E056AA215A92BF001348D0 /* LoginView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E05683215A92BE001348D0 /* LoginView_custom.swift */; };
 		A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E05684215A92BE001348D0 /* LoginView_custom.xib */; };
 		A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */; };
@@ -514,6 +516,8 @@
 		A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogsEntryDisplayView_custom.xib; sourceTree = "<group>"; };
 		A6B43C2B215E223F00E3DA3D /* VideoDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoDisplayView_custom.xib; sourceTree = "<group>"; };
 		A6B43C2D215E225C00E3DA3D /* VideoDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDisplayView_custom.swift; sourceTree = "<group>"; };
+		A6B43C2F215E297500E3DA3D /* AudioDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioDisplayView_custom.xib; sourceTree = "<group>"; };
+		A6B43C31215E299500E3DA3D /* AudioDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDisplayView_custom.swift; sourceTree = "<group>"; };
 		A6E05683215A92BE001348D0 /* LoginView_custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView_custom.swift; sourceTree = "<group>"; };
 		A6E05684215A92BE001348D0 /* LoginView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView_custom.xib; sourceTree = "<group>"; };
 		A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView_custom.xib; sourceTree = "<group>"; };
@@ -1068,6 +1072,7 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A6B43C2F215E297500E3DA3D /* AudioDisplayView_custom.xib */,
 				A6B43C2B215E223F00E3DA3D /* VideoDisplayView_custom.xib */,
 				A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */,
 				A611B98D215E14AF008C3AF7 /* AssetDisplayView_custom.xib */,
@@ -1102,6 +1107,7 @@
 				A6E056EF215D3C82001348D0 /* CommentAddView_custom.swift */,
 				A611B9B4215E14D0008C3AF7 /* AssetDisplayView_custom.swift */,
 				A6B43C2D215E225C00E3DA3D /* VideoDisplayView_custom.swift */,
+				A6B43C31215E299500E3DA3D /* AudioDisplayView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1617,6 +1623,7 @@
 				A6E056DD215D20F5001348D0 /* like_disabled.png in Resources */,
 				A6B43C28215E1ECB00E3DA3D /* BlogsEntryDisplayView_custom.xib in Resources */,
 				A6E056D8215D2096001348D0 /* RatingView_custom.xib in Resources */,
+				A6B43C30215E297500E3DA3D /* AudioDisplayView_custom.xib in Resources */,
 				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
 				A6E056E8215D3AFA001348D0 /* CommentDisplayView_custom.xib in Resources */,
 				A6E056C3215BE780001348D0 /* AssetListView_custom.xib in Resources */,
@@ -1827,6 +1834,7 @@
 				A6E056E2215D2C6D001348D0 /* CommentListView_custom.swift in Sources */,
 				A678B5F7210B01DF0008EB10 /* LoginScreenletModule.m in Sources */,
 				A6EAFD9B212C1E600072D7C8 /* DDLListScreenletModule.m in Sources */,
+				A6B43C32215E299500E3DA3D /* AudioDisplayView_custom.swift in Sources */,
 				A68F8E4D21218CE90082A85C /* ForgotPasswordScreenletManager.m in Sources */,
 				A6051B67212AAA6C00897387 /* PdfDisplayScreenletModule.m in Sources */,
 				A6145150211C504B001335C5 /* SignUpScreenletView.swift in Sources */,

@@ -12,6 +12,7 @@ export default class AudioDisplayScreenlet extends Component {
             autoLoad: props.autoLoad || true,
             className: props.className || "",
             classPK: props.classPK || 0,
+            theme: props.theme || ""
         }
     }
     render(){

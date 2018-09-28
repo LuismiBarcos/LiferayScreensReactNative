@@ -11,6 +11,7 @@ export default class AudioDisplay extends Component {
         style={styles.audio}
         className={"com.liferay.document.library.kernel.model.DLFileEntry"}
         classPK={57433}
+        theme={"custom"}
         // iOS Events
         onFileAssetResponse={this._onFileAssetResponse}
         // Android Events
