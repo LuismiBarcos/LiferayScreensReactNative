@@ -11,6 +11,7 @@ export default class PdfDisplay extends Component {
                 style={styles.pdf}
                 className={"com.liferay.document.library.kernel.model.DLFileEntry"}
                 classPK={38930}
+                theme={"custom"}
                 // iOS Events
                 onFileAssetResponse={this._onFileAssetResponse}
                 // Android Events

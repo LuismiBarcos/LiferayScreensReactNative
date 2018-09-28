@@ -13,6 +13,7 @@ import com.liferay.mobile.screens.dlfile.display.pdf.PdfDisplayScreenlet;
 import org.json.JSONObject;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class PdfDisplayScreenletViewManager extends SimpleViewManager<PdfDisplayScreenlet> implements AssetDisplayListener{
@@ -37,6 +38,16 @@ public class PdfDisplayScreenletViewManager extends SimpleViewManager<PdfDisplay
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(PdfDisplayScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "pdf_display_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.pdf_display_default
+                )
+        );
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         this.screenlet.setEntryId(screenletAttributes.getInt("entryId"));
         this.screenlet.setClassName(screenletAttributes.getString("className"));
