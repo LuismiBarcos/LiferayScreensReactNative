@@ -13,6 +13,7 @@ import com.liferay.mobile.screens.blogs.BlogsEntryDisplayScreenlet;
 import org.json.JSONObject;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class BlogsEntryDisplayScreenletViewManager extends SimpleViewManager<BlogsEntryDisplayScreenlet> implements AssetDisplayListener {
@@ -37,6 +38,16 @@ public class BlogsEntryDisplayScreenletViewManager extends SimpleViewManager<Blo
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(BlogsEntryDisplayScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "blogsentry_display_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.blogsentry_display_default
+                )
+        );
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         this.screenlet.setEntryId(screenletAttributes.getInt("entryId"));
         this.screenlet.setClassName(screenletAttributes.getString("className"));

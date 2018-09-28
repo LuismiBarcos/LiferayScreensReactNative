@@ -12,7 +12,8 @@ export default class BlogsEntryDisplayScreenlet extends Component {
             assetEntryId: props.assetEntryId || 0,
             className: props.className || "",
             classPK: props.classPK || 0,
-            autoLoad: props.autoLoad || true
+            autoLoad: props.autoLoad || true,
+            theme: props.theme || ""
         }
     }
     render(){

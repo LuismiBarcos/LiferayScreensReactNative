@@ -43,9 +43,11 @@ class BlogsEntryDisplayScreenletView: RCTView, BlogsEntryDisplayScreenletDelegat
 //    let className = screenletConfiguration["className"]! as! String
     let classPK = screenletConfiguration["classPK"]! as! NSNumber
     let autoLoad = screenletConfiguration["autoLoad"]! as! Bool
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.assetEntryId = assetEntryId.int64Value
     self.screenlet.classPK = classPK.int64Value
     self.screenlet.autoLoad = autoLoad
+    self.screenlet.themeName = theme
   }
   
   // MARK: BlogsEntryDisplayScreenletDelegate methods

@@ -97,6 +97,7 @@
 		A68F8E5121219F600082A85C /* DDLFormScreenletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F8E5021219F600082A85C /* DDLFormScreenletManager.swift */; };
 		A68F8E5421219F770082A85C /* DDLFormScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F8E5321219F770082A85C /* DDLFormScreenletView.swift */; };
 		A68F8E5621219F8B0082A85C /* DDLFormScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A68F8E5521219F8B0082A85C /* DDLFormScreenletModule.m */; };
+		A6B43C28215E1ECB00E3DA3D /* BlogsEntryDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */; };
 		A6E056AA215A92BF001348D0 /* LoginView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E05683215A92BE001348D0 /* LoginView_custom.swift */; };
 		A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E05684215A92BE001348D0 /* LoginView_custom.xib */; };
 		A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */; };
@@ -508,6 +509,7 @@
 		A68F8E5021219F600082A85C /* DDLFormScreenletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLFormScreenletManager.swift; sourceTree = "<group>"; };
 		A68F8E5321219F770082A85C /* DDLFormScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLFormScreenletView.swift; sourceTree = "<group>"; };
 		A68F8E5521219F8B0082A85C /* DDLFormScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDLFormScreenletModule.m; sourceTree = "<group>"; };
+		A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogsEntryDisplayView_custom.xib; sourceTree = "<group>"; };
 		A6E05683215A92BE001348D0 /* LoginView_custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView_custom.swift; sourceTree = "<group>"; };
 		A6E05684215A92BE001348D0 /* LoginView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView_custom.xib; sourceTree = "<group>"; };
 		A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView_custom.xib; sourceTree = "<group>"; };
@@ -1062,6 +1064,7 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */,
 				A611B98D215E14AF008C3AF7 /* AssetDisplayView_custom.xib */,
 				A6E056ED215D3C5B001348D0 /* CommentAddView_custom.xib */,
 				A6E056E7215D3AF9001348D0 /* CommentDisplayView_custom.xib */,
@@ -1606,6 +1609,7 @@
 			files = (
 				A611B9B3215E14B0008C3AF7 /* AssetDisplayView_custom.xib in Resources */,
 				A6E056DD215D20F5001348D0 /* like_disabled.png in Resources */,
+				A6B43C28215E1ECB00E3DA3D /* BlogsEntryDisplayView_custom.xib in Resources */,
 				A6E056D8215D2096001348D0 /* RatingView_custom.xib in Resources */,
 				A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */,
 				A6E056E8215D3AFA001348D0 /* CommentDisplayView_custom.xib in Resources */,
