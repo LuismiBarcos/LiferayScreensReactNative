@@ -98,6 +98,8 @@
 		A68F8E5421219F770082A85C /* DDLFormScreenletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F8E5321219F770082A85C /* DDLFormScreenletView.swift */; };
 		A68F8E5621219F8B0082A85C /* DDLFormScreenletModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A68F8E5521219F8B0082A85C /* DDLFormScreenletModule.m */; };
 		A6B43C28215E1ECB00E3DA3D /* BlogsEntryDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */; };
+		A6B43C2C215E223F00E3DA3D /* VideoDisplayView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B43C2B215E223F00E3DA3D /* VideoDisplayView_custom.xib */; };
+		A6B43C2E215E225C00E3DA3D /* VideoDisplayView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B43C2D215E225C00E3DA3D /* VideoDisplayView_custom.swift */; };
 		A6E056AA215A92BF001348D0 /* LoginView_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E05683215A92BE001348D0 /* LoginView_custom.swift */; };
 		A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E05684215A92BE001348D0 /* LoginView_custom.xib */; };
 		A6E056AD215B75AD001348D0 /* SignUpView_custom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */; };
@@ -510,6 +512,8 @@
 		A68F8E5321219F770082A85C /* DDLFormScreenletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDLFormScreenletView.swift; sourceTree = "<group>"; };
 		A68F8E5521219F8B0082A85C /* DDLFormScreenletModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDLFormScreenletModule.m; sourceTree = "<group>"; };
 		A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogsEntryDisplayView_custom.xib; sourceTree = "<group>"; };
+		A6B43C2B215E223F00E3DA3D /* VideoDisplayView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoDisplayView_custom.xib; sourceTree = "<group>"; };
+		A6B43C2D215E225C00E3DA3D /* VideoDisplayView_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDisplayView_custom.swift; sourceTree = "<group>"; };
 		A6E05683215A92BE001348D0 /* LoginView_custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView_custom.swift; sourceTree = "<group>"; };
 		A6E05684215A92BE001348D0 /* LoginView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView_custom.xib; sourceTree = "<group>"; };
 		A6E056AC215B75AC001348D0 /* SignUpView_custom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView_custom.xib; sourceTree = "<group>"; };
@@ -1064,6 +1068,7 @@
 		A6E05682215A92BE001348D0 /* Custom themes */ = {
 			isa = PBXGroup;
 			children = (
+				A6B43C2B215E223F00E3DA3D /* VideoDisplayView_custom.xib */,
 				A6B43C02215E1ECA00E3DA3D /* BlogsEntryDisplayView_custom.xib */,
 				A611B98D215E14AF008C3AF7 /* AssetDisplayView_custom.xib */,
 				A6E056ED215D3C5B001348D0 /* CommentAddView_custom.xib */,
@@ -1096,6 +1101,7 @@
 				A6E056E1215D2C6D001348D0 /* CommentListView_custom.swift */,
 				A6E056EF215D3C82001348D0 /* CommentAddView_custom.swift */,
 				A611B9B4215E14D0008C3AF7 /* AssetDisplayView_custom.swift */,
+				A6B43C2D215E225C00E3DA3D /* VideoDisplayView_custom.swift */,
 			);
 			path = "Custom themes";
 			sourceTree = "<group>";
@@ -1626,6 +1632,7 @@
 				A6E056EE215D3C5B001348D0 /* CommentAddView_custom.xib in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				A678B5F9210B04720008EB10 /* liferay-server-context.plist in Resources */,
+				A6B43C2C215E223F00E3DA3D /* VideoDisplayView_custom.xib in Resources */,
 				A6E056AB215A92BF001348D0 /* LoginView_custom.xib in Resources */,
 				A6E056E0215D2C4D001348D0 /* CommentListView_custom.xib in Resources */,
 				A6E056BB215BC6EC001348D0 /* DDLFormView_custom.xib in Resources */,
@@ -1781,6 +1788,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				A6EAFD99212C1E080072D7C8 /* DDLListScreenletManager.swift in Sources */,
 				A611B9B5215E14D0008C3AF7 /* AssetDisplayView_custom.swift in Sources */,
+				A6B43C2E215E225C00E3DA3D /* VideoDisplayView_custom.swift in Sources */,
 				A678B5F3210B01650008EB10 /* LoginScreenletManager.swift in Sources */,
 				A6E056B9215BC059001348D0 /* UserPortraitView_custom.swift in Sources */,
 				A678B608210B2D550008EB10 /* UserPortraitScreenletView.swift in Sources */,

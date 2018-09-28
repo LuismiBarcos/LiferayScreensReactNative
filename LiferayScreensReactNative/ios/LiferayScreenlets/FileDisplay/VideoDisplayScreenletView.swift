@@ -42,10 +42,12 @@ class VideoDisplayScreenletView: RCTView, FileDisplayScreenletDelegate {
     let autoLoad = screenletConfiguration["autoLoad"]! as! Bool
     let className = screenletConfiguration["className"]! as! String
     let classPK = screenletConfiguration["classPK"]! as! NSNumber
+    let theme = screenletConfiguration["theme"]! as! String
     self.screenlet.assetEntryId = assetEntryId.int64Value
     self.screenlet.autoLoad = autoLoad
     self.screenlet.className = className
     self.screenlet.classPK = classPK.int64Value
+    self.screenlet.themeName = theme
   }
   
   // MARK: FileDisplayScreenletDelegate methods

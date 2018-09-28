@@ -13,6 +13,7 @@ import com.liferay.mobile.screens.dlfile.display.video.VideoDisplayScreenlet;
 import org.json.JSONObject;
 
 import LiferayScreenlets.Base.EventEmitter;
+import LiferayScreenlets.Base.ThemesFinder;
 import LiferayScreenlets.Base.ViewUpdater;
 
 public class VideoDisplayScreenletViewManager extends SimpleViewManager<VideoDisplayScreenlet> implements VideoDisplayListener{
@@ -37,6 +38,16 @@ public class VideoDisplayScreenletViewManager extends SimpleViewManager<VideoDis
 
     @ReactProp(name="screenletAttributes")
     public void setConfiguration(VideoDisplayScreenlet screenlet, ReadableMap screenletAttributes) {
+        this.screenlet.removeAllViews();
+        String themeName = screenletAttributes.getString("theme");
+        this.screenlet.render(
+                ThemesFinder.getLayoutId(
+                        this.reactContext,
+                        "video_display_",
+                        themeName,
+                        com.liferay.mobile.screens.R.layout.video_display_default
+                )
+        );
         this.screenlet.setAutoLoad(screenletAttributes.getBoolean("autoLoad"));
         this.screenlet.setEntryId(screenletAttributes.getInt("entryId"));
         this.screenlet.setClassName(screenletAttributes.getString("className"));

@@ -10,6 +10,7 @@ export default class VideoDisplay extends Component {
       <VideoDisplayScreenlet 
         {...this.props}
         style={styles.video}
+        theme={"custom"}
         className={"com.liferay.document.library.kernel.model.DLFileEntry"}
         classPK={38943}
         // iOS Events
