@@ -17,7 +17,6 @@ export default class UserPortrait extends Component {
         <UserPortraitScreenlet 
             style={styles.portrait}
             userId={this.state.userId}
-            theme={"custom"}
             editable={true}
             // Events
             onUserPortraitLoaded={this._onUserPortraitLoaded}

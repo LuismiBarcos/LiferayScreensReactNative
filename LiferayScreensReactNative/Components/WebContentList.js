@@ -12,7 +12,6 @@ export default class WebContentList extends Component {
                 style={styles.content}
                 folderId={0}
                 labelFields={"description"}
-                theme={"custom"}
                 // iOS Events
                 onWebContentListResponse={this._onWebContentListResponse}
                 onWebContentSelected={this._onWebContentSelected}

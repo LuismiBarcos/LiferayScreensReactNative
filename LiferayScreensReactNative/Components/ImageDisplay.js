@@ -12,7 +12,6 @@ export default class ImageDisplay extends Component {
         style={styles.image}
         className={"com.liferay.document.library.kernel.model.DLFileEntry"}
         classPK={54498}
-        theme={"custom"}
         // iOS Events
         onFileAssetResponse={this._onFileAssetResponse}
         // Android Events

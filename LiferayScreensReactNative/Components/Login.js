@@ -25,7 +25,6 @@ export default class Login extends Component {
               onLoginSuccess={this._loginSucceded}
               onLoginError={this._loginFailed}
               saveCredentials={true}
-              theme={"custom"}
             />
         );
     }

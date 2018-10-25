@@ -10,7 +10,6 @@ export default class CommentDisplay extends Component {
             <CommentDisplayScreenlet 
                 style={styles.comment}
                 commentId={63710}
-                theme={"custom"}
                 // iOS Events
                 onCommentLoaded={this._onCommentLoaded}
                 // Android Events

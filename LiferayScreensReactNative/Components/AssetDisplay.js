@@ -12,7 +12,6 @@ export default class AssetDisplay extends Component {
                 style={styles.asset}
                 className={"com.liferay.blogs.kernel.model.BlogsEntry"}
                 classPK={40515}
-                theme={"custom"}
                 // iOS Events
                 onAssetResponse={this._onAssetResponse}
                 // Android Events

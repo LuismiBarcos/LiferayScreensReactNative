@@ -10,7 +10,6 @@ export default class BlogsEntryDisplay extends Component {
             <BlogsEntryDisplayScreenlet 
                 {...this.props}
                 style={styles.blogs}
-                theme={"custom"}
                 // assetEntryId={40516}
                 classPK={40515}
                 className={"com.liferay.blogs.kernel.model.BlogsEntry"} // -> Only for android

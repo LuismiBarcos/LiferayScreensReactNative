@@ -11,7 +11,6 @@ export default class FileDisplay extends Component {
                 style={styles.file}
                 className={"com.liferay.document.library.kernel.model.DLFileEntry"}
                 classPK={66505}
-                theme={"custom"}
                 // iOS Events
                 onFileAssetResponse={this._onFileAssetResponse.bind(this)}
                 onFileAssetError={this._onFileAssetError.bind(this)}                

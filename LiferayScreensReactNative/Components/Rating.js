@@ -11,7 +11,6 @@ export default class Rating extends Component {
                 style={styles.rating}
                 classPK={74606}
                 className={"com.liferay.document.library.kernel.model.DLFileEntry"}
-                theme={"custom"}
                 // iOS events
                 onRatingRetrieve={this._onRatingRetrieve}
                 onRatingDeleted={this._onRatingDeleted}

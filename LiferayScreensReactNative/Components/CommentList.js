@@ -15,7 +15,6 @@ export default class CommentList extends Component {
                 style={styles.comments}
                 classPK={74606}
                 className={"com.liferay.document.library.kernel.model.DLFileEntry"}
-                theme={"custom"}
                 // iOS events
                 onListResponseComments={this._onListResponseComments}
                 onSelectedComment={this._onSelectedComment}
